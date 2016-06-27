@@ -1,0 +1,229 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow Model Setup 'gclock:clock1|temporal'
+Slack : -29.526
+TNS   : -94.973
+
+Type  : Slow Model Setup 'EAT:eat1|snake_size[1]'
+Slack : -29.487
+TNS   : -6911.816
+
+Type  : Slow Model Setup 'FOOD:food1|num[0]'
+Slack : -25.795
+TNS   : -5757.979
+
+Type  : Slow Model Setup 'CLEAR'
+Slack : -23.080
+TNS   : -2157.605
+
+Type  : Slow Model Setup 'CLOCK'
+Slack : -3.231
+TNS   : -54.300
+
+Type  : Slow Model Setup 'snake_fsm:fsm1|FOOD_S'
+Slack : -1.558
+TNS   : -5.850
+
+Type  : Slow Model Hold 'CLEAR'
+Slack : -4.993
+TNS   : -315.400
+
+Type  : Slow Model Hold 'CLOCK'
+Slack : -2.695
+TNS   : -2.695
+
+Type  : Slow Model Hold 'FOOD:food1|num[0]'
+Slack : -1.707
+TNS   : -68.940
+
+Type  : Slow Model Hold 'snake_fsm:fsm1|FOOD_S'
+Slack : -0.564
+TNS   : -0.564
+
+Type  : Slow Model Hold 'gclock:clock1|temporal'
+Slack : 0.445
+TNS   : 0.000
+
+Type  : Slow Model Hold 'EAT:eat1|snake_size[1]'
+Slack : 0.812
+TNS   : 0.000
+
+Type  : Slow Model Recovery 'EAT:eat1|snake_size[1]'
+Slack : -15.343
+TNS   : -725.288
+
+Type  : Slow Model Recovery 'FOOD:food1|num[0]'
+Slack : -11.651
+TNS   : -27.876
+
+Type  : Slow Model Recovery 'CLOCK'
+Slack : -2.621
+TNS   : -60.375
+
+Type  : Slow Model Recovery 'gclock:clock1|temporal'
+Slack : -1.377
+TNS   : -5.194
+
+Type  : Slow Model Recovery 'CLEAR'
+Slack : -0.254
+TNS   : -0.257
+
+Type  : Slow Model Removal 'CLEAR'
+Slack : -7.072
+TNS   : -578.194
+
+Type  : Slow Model Removal 'FOOD:food1|num[0]'
+Slack : -2.935
+TNS   : -610.879
+
+Type  : Slow Model Removal 'EAT:eat1|snake_size[1]'
+Slack : -0.672
+TNS   : -10.449
+
+Type  : Slow Model Removal 'gclock:clock1|temporal'
+Slack : 0.837
+TNS   : 0.000
+
+Type  : Slow Model Removal 'CLOCK'
+Slack : 2.730
+TNS   : 0.000
+
+Type  : Slow Model Minimum Pulse Width 'CLEAR'
+Slack : -1.866
+TNS   : -1573.909
+
+Type  : Slow Model Minimum Pulse Width 'CLOCK'
+Slack : -1.631
+TNS   : -32.181
+
+Type  : Slow Model Minimum Pulse Width 'gclock:clock1|temporal'
+Slack : -0.611
+TNS   : -17.108
+
+Type  : Slow Model Minimum Pulse Width 'EAT:eat1|snake_size[1]'
+Slack : 0.500
+TNS   : 0.000
+
+Type  : Slow Model Minimum Pulse Width 'FOOD:food1|num[0]'
+Slack : 0.500
+TNS   : 0.000
+
+Type  : Slow Model Minimum Pulse Width 'snake_fsm:fsm1|FOOD_S'
+Slack : 0.500
+TNS   : 0.000
+
+Type  : Fast Model Setup 'EAT:eat1|snake_size[1]'
+Slack : -10.785
+TNS   : -2337.672
+
+Type  : Fast Model Setup 'gclock:clock1|temporal'
+Slack : -10.015
+TNS   : -28.856
+
+Type  : Fast Model Setup 'FOOD:food1|num[0]'
+Slack : -9.122
+TNS   : -1923.128
+
+Type  : Fast Model Setup 'CLEAR'
+Slack : -7.736
+TNS   : -703.757
+
+Type  : Fast Model Setup 'CLOCK'
+Slack : -0.766
+TNS   : -8.567
+
+Type  : Fast Model Setup 'snake_fsm:fsm1|FOOD_S'
+Slack : 0.079
+TNS   : 0.000
+
+Type  : Fast Model Hold 'CLEAR'
+Slack : -2.449
+TNS   : -177.138
+
+Type  : Fast Model Hold 'CLOCK'
+Slack : -1.725
+TNS   : -1.725
+
+Type  : Fast Model Hold 'FOOD:food1|num[0]'
+Slack : -0.753
+TNS   : -32.836
+
+Type  : Fast Model Hold 'snake_fsm:fsm1|FOOD_S'
+Slack : -0.269
+TNS   : -0.269
+
+Type  : Fast Model Hold 'EAT:eat1|snake_size[1]'
+Slack : 0.143
+TNS   : 0.000
+
+Type  : Fast Model Hold 'gclock:clock1|temporal'
+Slack : 0.215
+TNS   : 0.000
+
+Type  : Fast Model Recovery 'EAT:eat1|snake_size[1]'
+Slack : -5.928
+TNS   : -190.888
+
+Type  : Fast Model Recovery 'FOOD:food1|num[0]'
+Slack : -4.250
+TNS   : -8.943
+
+Type  : Fast Model Recovery 'gclock:clock1|temporal'
+Slack : -0.175
+TNS   : -0.489
+
+Type  : Fast Model Recovery 'CLOCK'
+Slack : -0.150
+TNS   : -2.381
+
+Type  : Fast Model Recovery 'CLEAR'
+Slack : 0.233
+TNS   : 0.000
+
+Type  : Fast Model Removal 'CLEAR'
+Slack : -2.963
+TNS   : -242.154
+
+Type  : Fast Model Removal 'FOOD:food1|num[0]'
+Slack : -0.830
+TNS   : -69.750
+
+Type  : Fast Model Removal 'EAT:eat1|snake_size[1]'
+Slack : 0.022
+TNS   : 0.000
+
+Type  : Fast Model Removal 'gclock:clock1|temporal'
+Slack : 0.392
+TNS   : 0.000
+
+Type  : Fast Model Removal 'CLOCK'
+Slack : 0.786
+TNS   : 0.000
+
+Type  : Fast Model Minimum Pulse Width 'CLEAR'
+Slack : -1.380
+TNS   : -286.636
+
+Type  : Fast Model Minimum Pulse Width 'CLOCK'
+Slack : -1.380
+TNS   : -26.380
+
+Type  : Fast Model Minimum Pulse Width 'gclock:clock1|temporal'
+Slack : -0.500
+TNS   : -14.000
+
+Type  : Fast Model Minimum Pulse Width 'EAT:eat1|snake_size[1]'
+Slack : 0.500
+TNS   : 0.000
+
+Type  : Fast Model Minimum Pulse Width 'FOOD:food1|num[0]'
+Slack : 0.500
+TNS   : 0.000
+
+Type  : Fast Model Minimum Pulse Width 'snake_fsm:fsm1|FOOD_S'
+Slack : 0.500
+TNS   : 0.000
+
+------------------------------------------------------------

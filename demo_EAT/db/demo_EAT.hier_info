@@ -1,0 +1,68 @@
+|demo_EAT
+RESET => EAT:eat1.RESET
+EAT_S => EAT:eat1.EAT_S
+food_pos[0] => EAT:eat1.food_pos[0]
+food_pos[1] => EAT:eat1.food_pos[1]
+food_pos[2] => EAT:eat1.food_pos[2]
+food_pos[3] => EAT:eat1.food_pos[3]
+food_pos[4] => EAT:eat1.food_pos[4]
+food_pos[5] => EAT:eat1.food_pos[5]
+food_pos[6] => EAT:eat1.food_pos[6]
+food_pos[7] => EAT:eat1.food_pos[7]
+food_pos[8] => ~NO_FANOUT~
+snake_head[0] => EAT:eat1.snake_head[0]
+snake_head[1] => EAT:eat1.snake_head[1]
+snake_head[2] => EAT:eat1.snake_head[2]
+snake_head[3] => EAT:eat1.snake_head[3]
+snake_head[4] => EAT:eat1.snake_head[4]
+snake_head[5] => EAT:eat1.snake_head[5]
+snake_head[6] => EAT:eat1.snake_head[6]
+snake_head[7] => EAT:eat1.snake_head[7]
+snake_head[8] => ~NO_FANOUT~
+snake_size[0] <= EAT:eat1.snake_size[0]
+snake_size[1] <= EAT:eat1.snake_size[1]
+snake_size[2] <= EAT:eat1.snake_size[2]
+snake_size[3] <= EAT:eat1.snake_size[3]
+snake_size[4] <= EAT:eat1.snake_size[4]
+snake_size[5] <= EAT:eat1.snake_size[5]
+snake_size[6] <= <GND>
+eaten <= EAT:eat1.eaten
+
+
+|demo_EAT|EAT:eat1
+RESET => eaten.IN1
+RESET => eaten.OUTPUTSELECT
+RESET => snake_size[1]$latch.PRESET
+RESET => snake_size[0]$latch.ACLR
+RESET => snake_size[2]$latch.ACLR
+RESET => snake_size[3]$latch.ACLR
+RESET => snake_size[4]$latch.ACLR
+RESET => snake_size[5]$latch.ACLR
+EAT_S => snake_size[5].IN1
+EAT_S => eaten.DATAA
+EAT_S => eaten.IN1
+food_pos[0] => Equal0.IN7
+food_pos[1] => Equal0.IN6
+food_pos[2] => Equal0.IN5
+food_pos[3] => Equal0.IN4
+food_pos[4] => Equal0.IN3
+food_pos[5] => Equal0.IN2
+food_pos[6] => Equal0.IN1
+food_pos[7] => Equal0.IN0
+snake_head[0] => Equal0.IN15
+snake_head[1] => Equal0.IN14
+snake_head[2] => Equal0.IN13
+snake_head[3] => Equal0.IN12
+snake_head[4] => Equal0.IN11
+snake_head[5] => Equal0.IN10
+snake_head[6] => Equal0.IN9
+snake_head[7] => Equal0.IN8
+snake_size[0] <= snake_size[0]$latch.DB_MAX_OUTPUT_PORT_TYPE
+snake_size[1] <= snake_size[1]$latch.DB_MAX_OUTPUT_PORT_TYPE
+snake_size[2] <= snake_size[2]$latch.DB_MAX_OUTPUT_PORT_TYPE
+snake_size[3] <= snake_size[3]$latch.DB_MAX_OUTPUT_PORT_TYPE
+snake_size[4] <= snake_size[4]$latch.DB_MAX_OUTPUT_PORT_TYPE
+snake_size[5] <= snake_size[5]$latch.DB_MAX_OUTPUT_PORT_TYPE
+eaten <= eaten$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+

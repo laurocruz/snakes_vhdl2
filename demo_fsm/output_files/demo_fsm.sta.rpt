@@ -1,0 +1,1264 @@
+TimeQuest Timing Analyzer report for demo_fsm
+Mon Jun 27 16:55:03 2016
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow Model Fmax Summary
+  6. Slow Model Setup Summary
+  7. Slow Model Hold Summary
+  8. Slow Model Recovery Summary
+  9. Slow Model Removal Summary
+ 10. Slow Model Minimum Pulse Width Summary
+ 11. Slow Model Setup: 'KEY[0]'
+ 12. Slow Model Setup: 'clock'
+ 13. Slow Model Hold: 'KEY[0]'
+ 14. Slow Model Hold: 'clock'
+ 15. Slow Model Recovery: 'clock'
+ 16. Slow Model Removal: 'clock'
+ 17. Slow Model Minimum Pulse Width: 'clock'
+ 18. Slow Model Minimum Pulse Width: 'KEY[0]'
+ 19. Setup Times
+ 20. Hold Times
+ 21. Clock to Output Times
+ 22. Minimum Clock to Output Times
+ 23. Propagation Delay
+ 24. Minimum Propagation Delay
+ 25. Fast Model Setup Summary
+ 26. Fast Model Hold Summary
+ 27. Fast Model Recovery Summary
+ 28. Fast Model Removal Summary
+ 29. Fast Model Minimum Pulse Width Summary
+ 30. Fast Model Setup: 'KEY[0]'
+ 31. Fast Model Setup: 'clock'
+ 32. Fast Model Hold: 'KEY[0]'
+ 33. Fast Model Hold: 'clock'
+ 34. Fast Model Recovery: 'clock'
+ 35. Fast Model Removal: 'clock'
+ 36. Fast Model Minimum Pulse Width: 'clock'
+ 37. Fast Model Minimum Pulse Width: 'KEY[0]'
+ 38. Setup Times
+ 39. Hold Times
+ 40. Clock to Output Times
+ 41. Minimum Clock to Output Times
+ 42. Propagation Delay
+ 43. Minimum Propagation Delay
+ 44. Multicorner Timing Analysis Summary
+ 45. Setup Times
+ 46. Hold Times
+ 47. Clock to Output Times
+ 48. Minimum Clock to Output Times
+ 49. Progagation Delay
+ 50. Minimum Progagation Delay
+ 51. Setup Transfers
+ 52. Hold Transfers
+ 53. Recovery Transfers
+ 54. Removal Transfers
+ 55. Report TCCS
+ 56. Report RSKM
+ 57. Unconstrained Paths
+ 58. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                      ;
++--------------------+-------------------------------------------------------------------+
+; Quartus II Version ; Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition ;
+; Revision Name      ; demo_fsm                                                          ;
+; Device Family      ; Cyclone II                                                        ;
+; Device Name        ; EP2C20F484C7                                                      ;
+; Timing Models      ; Final                                                             ;
+; Delay Model        ; Combined                                                          ;
+; Rise/Fall Delays   ; Unavailable                                                       ;
++--------------------+-------------------------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 8      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                             ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+------------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets    ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+------------+
+; clock      ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clock }  ;
+; KEY[0]     ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { KEY[0] } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Slow Model Fmax Summary                                                                                   ;
++------------+-----------------+------------+---------------------------------------------------------------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note                                                          ;
++------------+-----------------+------------+---------------------------------------------------------------+
+; 165.78 MHz ; 165.78 MHz      ; KEY[0]     ;                                                               ;
+; 664.89 MHz ; 380.08 MHz      ; clock      ; limit due to minimum period restriction (max I/O toggle rate) ;
++------------+-----------------+------------+---------------------------------------------------------------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++---------------------------------+
+; Slow Model Setup Summary        ;
++--------+--------+---------------+
+; Clock  ; Slack  ; End Point TNS ;
++--------+--------+---------------+
+; KEY[0] ; -5.032 ; -9.902        ;
+; clock  ; -2.019 ; -5.256        ;
++--------+--------+---------------+
+
+
++---------------------------------+
+; Slow Model Hold Summary         ;
++--------+--------+---------------+
+; Clock  ; Slack  ; End Point TNS ;
++--------+--------+---------------+
+; KEY[0] ; -1.110 ; -1.853        ;
+; clock  ; 0.153  ; 0.000         ;
++--------+--------+---------------+
+
+
++--------------------------------+
+; Slow Model Recovery Summary    ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; clock ; -0.068 ; -0.136        ;
++-------+--------+---------------+
+
+
++-------------------------------+
+; Slow Model Removal Summary    ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; clock ; 0.320 ; 0.000         ;
++-------+-------+---------------+
+
+
++----------------------------------------+
+; Slow Model Minimum Pulse Width Summary ;
++--------+--------+----------------------+
+; Clock  ; Slack  ; End Point TNS        ;
++--------+--------+----------------------+
+; clock  ; -1.631 ; -19.961              ;
+; KEY[0] ; -1.469 ; -1.469               ;
++--------+--------+----------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'KEY[0]'                                                                                                               ;
++--------+---------------------------------+-------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                       ; To Node                 ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+---------------------------------+-------------------------+--------------+-------------+--------------+------------+------------+
+; -5.032 ; snake_fsm:fsm1|dir[0]~6         ; snake_fsm:fsm1|dir[0]~6 ; KEY[0]       ; KEY[0]      ; 1.000        ; 0.000      ; 4.890      ;
+; -4.870 ; snake_fsm:fsm1|dir[1]~1         ; snake_fsm:fsm1|dir[1]~1 ; KEY[0]       ; KEY[0]      ; 1.000        ; 0.000      ; 4.677      ;
+; -4.040 ; snake_fsm:fsm1|dir[0]~_emulated ; snake_fsm:fsm1|dir[0]~6 ; clock        ; KEY[0]      ; 0.500        ; 1.971      ; 5.369      ;
+; -3.878 ; snake_fsm:fsm1|dir[1]~_emulated ; snake_fsm:fsm1|dir[1]~1 ; clock        ; KEY[0]      ; 0.500        ; 1.971      ; 5.156      ;
+; -3.105 ; snake_fsm:fsm1|dir[1]~1         ; snake_fsm:fsm1|dir[0]~6 ; KEY[0]       ; KEY[0]      ; 1.000        ; 0.000      ; 2.963      ;
+; -2.669 ; snake_fsm:fsm1|dir[0]~6         ; snake_fsm:fsm1|dir[1]~1 ; KEY[0]       ; KEY[0]      ; 1.000        ; 0.000      ; 2.476      ;
+; -2.191 ; KEY[0]                          ; snake_fsm:fsm1|dir[0]~6 ; KEY[0]       ; KEY[0]      ; 0.500        ; 4.815      ; 6.364      ;
+; -2.113 ; snake_fsm:fsm1|dir[1]~_emulated ; snake_fsm:fsm1|dir[0]~6 ; clock        ; KEY[0]      ; 0.500        ; 1.971      ; 3.442      ;
+; -1.787 ; KEY[0]                          ; snake_fsm:fsm1|dir[1]~1 ; KEY[0]       ; KEY[0]      ; 0.500        ; 4.815      ; 5.909      ;
+; -1.691 ; KEY[0]                          ; snake_fsm:fsm1|dir[0]~6 ; KEY[0]       ; KEY[0]      ; 1.000        ; 4.815      ; 6.364      ;
+; -1.677 ; snake_fsm:fsm1|dir[0]~_emulated ; snake_fsm:fsm1|dir[1]~1 ; clock        ; KEY[0]      ; 0.500        ; 1.971      ; 2.955      ;
+; -1.287 ; KEY[0]                          ; snake_fsm:fsm1|dir[1]~1 ; KEY[0]       ; KEY[0]      ; 1.000        ; 4.815      ; 5.909      ;
++--------+---------------------------------+-------------------------+--------------+-------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'clock'                                                                                                                                                  ;
++--------+----------------------------------------------+----------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                    ; To Node                                      ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+----------------------------------------------+----------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -2.019 ; snake_fsm:fsm1|dir[1]~1                      ; snake_fsm:fsm1|dir[1]~_emulated              ; KEY[0]       ; clock       ; 0.500        ; -1.971     ; 0.586      ;
+; -2.011 ; snake_fsm:fsm1|dir[0]~6                      ; snake_fsm:fsm1|dir[0]~_emulated              ; KEY[0]       ; clock       ; 0.500        ; -1.971     ; 0.578      ;
+; -0.504 ; snake_fsm:fsm1|current_state.START           ; snake_fsm:fsm1|dir[0]~_emulated              ; clock        ; clock       ; 1.000        ; -0.001     ; 1.541      ;
+; -0.504 ; snake_fsm:fsm1|current_state.START           ; snake_fsm:fsm1|dir[1]~_emulated              ; clock        ; clock       ; 1.000        ; -0.001     ; 1.541      ;
+; -0.340 ; snake_fsm:fsm1|current_state.GROW            ; snake_fsm:fsm1|current_state.FOOD            ; clock        ; clock       ; 1.000        ; 0.001      ; 1.379      ;
+; -0.204 ; snake_fsm:fsm1|current_state.START           ; snake_fsm:fsm1|current_state.FOOD            ; clock        ; clock       ; 1.000        ; 0.000      ; 1.242      ;
+; -0.146 ; KEY[0]                                       ; snake_fsm:fsm1|FOOD_S                        ; KEY[0]       ; clock       ; 0.500        ; 2.845      ; 3.529      ;
+; -0.146 ; KEY[0]                                       ; snake_fsm:fsm1|WALK_S                        ; KEY[0]       ; clock       ; 0.500        ; 2.845      ; 3.529      ;
+; -0.146 ; KEY[0]                                       ; snake_fsm:fsm1|COLISION_S                    ; KEY[0]       ; clock       ; 0.500        ; 2.845      ; 3.529      ;
+; -0.146 ; KEY[0]                                       ; snake_fsm:fsm1|EAT_S                         ; KEY[0]       ; clock       ; 0.500        ; 2.845      ; 3.529      ;
+; -0.146 ; KEY[0]                                       ; snake_fsm:fsm1|RESET                         ; KEY[0]       ; clock       ; 0.500        ; 2.845      ; 3.529      ;
+; -0.109 ; snake_fsm:fsm1|current_state.EAT_VERIFY      ; snake_fsm:fsm1|current_state.GROW            ; clock        ; clock       ; 1.000        ; -0.001     ; 1.146      ;
+; -0.050 ; KEY[0]                                       ; snake_fsm:fsm1|current_state.GROW            ; KEY[0]       ; clock       ; 0.500        ; 2.844      ; 3.432      ;
+; -0.028 ; snake_fsm:fsm1|current_state.EAT_VERIFY      ; snake_fsm:fsm1|current_state.WALK            ; clock        ; clock       ; 1.000        ; 0.000      ; 1.066      ;
+; -0.023 ; snake_fsm:fsm1|current_state.EAT_CHECK       ; snake_fsm:fsm1|EAT_S                         ; clock        ; clock       ; 1.000        ; 0.000      ; 1.061      ;
+; -0.019 ; snake_fsm:fsm1|current_state.EAT_CHECK       ; snake_fsm:fsm1|current_state.EAT_VERIFY      ; clock        ; clock       ; 1.000        ; 0.000      ; 1.057      ;
+; 0.099  ; KEY[0]                                       ; snake_fsm:fsm1|current_state.WALK            ; KEY[0]       ; clock       ; 0.500        ; 2.845      ; 3.284      ;
+; 0.099  ; KEY[0]                                       ; snake_fsm:fsm1|current_state.COLISION_CHECK  ; KEY[0]       ; clock       ; 0.500        ; 2.845      ; 3.284      ;
+; 0.099  ; KEY[0]                                       ; snake_fsm:fsm1|current_state.COLISION_VERIFY ; KEY[0]       ; clock       ; 0.500        ; 2.845      ; 3.284      ;
+; 0.099  ; KEY[0]                                       ; snake_fsm:fsm1|current_state.EAT_CHECK       ; KEY[0]       ; clock       ; 0.500        ; 2.845      ; 3.284      ;
+; 0.099  ; KEY[0]                                       ; snake_fsm:fsm1|current_state.EAT_VERIFY      ; KEY[0]       ; clock       ; 0.500        ; 2.845      ; 3.284      ;
+; 0.099  ; KEY[0]                                       ; snake_fsm:fsm1|current_state.START           ; KEY[0]       ; clock       ; 0.500        ; 2.845      ; 3.284      ;
+; 0.099  ; KEY[0]                                       ; snake_fsm:fsm1|current_state.FOOD            ; KEY[0]       ; clock       ; 0.500        ; 2.845      ; 3.284      ;
+; 0.113  ; snake_fsm:fsm1|current_state.START           ; snake_fsm:fsm1|RESET                         ; clock        ; clock       ; 1.000        ; 0.000      ; 0.925      ;
+; 0.119  ; snake_fsm:fsm1|current_state.FOOD            ; snake_fsm:fsm1|FOOD_S                        ; clock        ; clock       ; 1.000        ; 0.000      ; 0.919      ;
+; 0.120  ; snake_fsm:fsm1|current_state.WALK            ; snake_fsm:fsm1|WALK_S                        ; clock        ; clock       ; 1.000        ; 0.000      ; 0.918      ;
+; 0.121  ; snake_fsm:fsm1|current_state.WALK            ; snake_fsm:fsm1|current_state.COLISION_CHECK  ; clock        ; clock       ; 1.000        ; 0.000      ; 0.917      ;
+; 0.122  ; snake_fsm:fsm1|current_state.COLISION_VERIFY ; snake_fsm:fsm1|current_state.START           ; clock        ; clock       ; 1.000        ; 0.000      ; 0.916      ;
+; 0.123  ; snake_fsm:fsm1|current_state.COLISION_VERIFY ; snake_fsm:fsm1|current_state.EAT_CHECK       ; clock        ; clock       ; 1.000        ; 0.000      ; 0.915      ;
+; 0.123  ; snake_fsm:fsm1|current_state.FOOD            ; snake_fsm:fsm1|current_state.WALK            ; clock        ; clock       ; 1.000        ; 0.000      ; 0.915      ;
+; 0.131  ; snake_fsm:fsm1|current_state.COLISION_CHECK  ; snake_fsm:fsm1|current_state.COLISION_VERIFY ; clock        ; clock       ; 1.000        ; 0.000      ; 0.907      ;
+; 0.131  ; snake_fsm:fsm1|current_state.COLISION_CHECK  ; snake_fsm:fsm1|COLISION_S                    ; clock        ; clock       ; 1.000        ; 0.000      ; 0.907      ;
+; 0.307  ; snake_fsm:fsm1|current_state.GROW            ; snake_fsm:fsm1|current_state.GROW            ; clock        ; clock       ; 1.000        ; 0.000      ; 0.731      ;
+; 0.354  ; KEY[0]                                       ; snake_fsm:fsm1|FOOD_S                        ; KEY[0]       ; clock       ; 1.000        ; 2.845      ; 3.529      ;
+; 0.354  ; KEY[0]                                       ; snake_fsm:fsm1|WALK_S                        ; KEY[0]       ; clock       ; 1.000        ; 2.845      ; 3.529      ;
+; 0.354  ; KEY[0]                                       ; snake_fsm:fsm1|COLISION_S                    ; KEY[0]       ; clock       ; 1.000        ; 2.845      ; 3.529      ;
+; 0.354  ; KEY[0]                                       ; snake_fsm:fsm1|EAT_S                         ; KEY[0]       ; clock       ; 1.000        ; 2.845      ; 3.529      ;
+; 0.354  ; KEY[0]                                       ; snake_fsm:fsm1|RESET                         ; KEY[0]       ; clock       ; 1.000        ; 2.845      ; 3.529      ;
+; 0.450  ; KEY[0]                                       ; snake_fsm:fsm1|current_state.GROW            ; KEY[0]       ; clock       ; 1.000        ; 2.844      ; 3.432      ;
+; 0.599  ; KEY[0]                                       ; snake_fsm:fsm1|current_state.WALK            ; KEY[0]       ; clock       ; 1.000        ; 2.845      ; 3.284      ;
+; 0.599  ; KEY[0]                                       ; snake_fsm:fsm1|current_state.COLISION_CHECK  ; KEY[0]       ; clock       ; 1.000        ; 2.845      ; 3.284      ;
+; 0.599  ; KEY[0]                                       ; snake_fsm:fsm1|current_state.COLISION_VERIFY ; KEY[0]       ; clock       ; 1.000        ; 2.845      ; 3.284      ;
+; 0.599  ; KEY[0]                                       ; snake_fsm:fsm1|current_state.EAT_CHECK       ; KEY[0]       ; clock       ; 1.000        ; 2.845      ; 3.284      ;
+; 0.599  ; KEY[0]                                       ; snake_fsm:fsm1|current_state.EAT_VERIFY      ; KEY[0]       ; clock       ; 1.000        ; 2.845      ; 3.284      ;
+; 0.599  ; KEY[0]                                       ; snake_fsm:fsm1|current_state.START           ; KEY[0]       ; clock       ; 1.000        ; 2.845      ; 3.284      ;
+; 0.599  ; KEY[0]                                       ; snake_fsm:fsm1|current_state.FOOD            ; KEY[0]       ; clock       ; 1.000        ; 2.845      ; 3.284      ;
++--------+----------------------------------------------+----------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'KEY[0]'                                                                                                                ;
++--------+---------------------------------+-------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                       ; To Node                 ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+---------------------------------+-------------------------+--------------+-------------+--------------+------------+------------+
+; -1.110 ; KEY[0]                          ; snake_fsm:fsm1|dir[1]~1 ; KEY[0]       ; KEY[0]      ; 0.000        ; 4.815      ; 3.705      ;
+; -0.743 ; KEY[0]                          ; snake_fsm:fsm1|dir[0]~6 ; KEY[0]       ; KEY[0]      ; 0.000        ; 4.815      ; 4.072      ;
+; -0.610 ; KEY[0]                          ; snake_fsm:fsm1|dir[1]~1 ; KEY[0]       ; KEY[0]      ; -0.500       ; 4.815      ; 3.705      ;
+; -0.243 ; KEY[0]                          ; snake_fsm:fsm1|dir[0]~6 ; KEY[0]       ; KEY[0]      ; -0.500       ; 4.815      ; 4.072      ;
+; 1.484  ; snake_fsm:fsm1|dir[0]~_emulated ; snake_fsm:fsm1|dir[1]~1 ; clock        ; KEY[0]      ; -0.500       ; 1.971      ; 2.955      ;
+; 1.971  ; snake_fsm:fsm1|dir[1]~_emulated ; snake_fsm:fsm1|dir[0]~6 ; clock        ; KEY[0]      ; -0.500       ; 1.971      ; 3.442      ;
+; 2.476  ; snake_fsm:fsm1|dir[0]~6         ; snake_fsm:fsm1|dir[1]~1 ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.000      ; 2.476      ;
+; 2.963  ; snake_fsm:fsm1|dir[1]~1         ; snake_fsm:fsm1|dir[0]~6 ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.000      ; 2.963      ;
+; 3.685  ; snake_fsm:fsm1|dir[1]~_emulated ; snake_fsm:fsm1|dir[1]~1 ; clock        ; KEY[0]      ; -0.500       ; 1.971      ; 5.156      ;
+; 3.898  ; snake_fsm:fsm1|dir[0]~_emulated ; snake_fsm:fsm1|dir[0]~6 ; clock        ; KEY[0]      ; -0.500       ; 1.971      ; 5.369      ;
+; 4.677  ; snake_fsm:fsm1|dir[1]~1         ; snake_fsm:fsm1|dir[1]~1 ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.000      ; 4.677      ;
+; 4.890  ; snake_fsm:fsm1|dir[0]~6         ; snake_fsm:fsm1|dir[0]~6 ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.000      ; 4.890      ;
++--------+---------------------------------+-------------------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'clock'                                                                                                                                                  ;
++-------+----------------------------------------------+----------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                    ; To Node                                      ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+----------------------------------------------+----------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.153 ; KEY[0]                                       ; snake_fsm:fsm1|current_state.WALK            ; KEY[0]       ; clock       ; 0.000        ; 2.845      ; 3.284      ;
+; 0.153 ; KEY[0]                                       ; snake_fsm:fsm1|current_state.COLISION_CHECK  ; KEY[0]       ; clock       ; 0.000        ; 2.845      ; 3.284      ;
+; 0.153 ; KEY[0]                                       ; snake_fsm:fsm1|current_state.COLISION_VERIFY ; KEY[0]       ; clock       ; 0.000        ; 2.845      ; 3.284      ;
+; 0.153 ; KEY[0]                                       ; snake_fsm:fsm1|current_state.EAT_CHECK       ; KEY[0]       ; clock       ; 0.000        ; 2.845      ; 3.284      ;
+; 0.153 ; KEY[0]                                       ; snake_fsm:fsm1|current_state.EAT_VERIFY      ; KEY[0]       ; clock       ; 0.000        ; 2.845      ; 3.284      ;
+; 0.153 ; KEY[0]                                       ; snake_fsm:fsm1|current_state.START           ; KEY[0]       ; clock       ; 0.000        ; 2.845      ; 3.284      ;
+; 0.153 ; KEY[0]                                       ; snake_fsm:fsm1|current_state.FOOD            ; KEY[0]       ; clock       ; 0.000        ; 2.845      ; 3.284      ;
+; 0.302 ; KEY[0]                                       ; snake_fsm:fsm1|current_state.GROW            ; KEY[0]       ; clock       ; 0.000        ; 2.844      ; 3.432      ;
+; 0.398 ; KEY[0]                                       ; snake_fsm:fsm1|FOOD_S                        ; KEY[0]       ; clock       ; 0.000        ; 2.845      ; 3.529      ;
+; 0.398 ; KEY[0]                                       ; snake_fsm:fsm1|WALK_S                        ; KEY[0]       ; clock       ; 0.000        ; 2.845      ; 3.529      ;
+; 0.398 ; KEY[0]                                       ; snake_fsm:fsm1|COLISION_S                    ; KEY[0]       ; clock       ; 0.000        ; 2.845      ; 3.529      ;
+; 0.398 ; KEY[0]                                       ; snake_fsm:fsm1|EAT_S                         ; KEY[0]       ; clock       ; 0.000        ; 2.845      ; 3.529      ;
+; 0.398 ; KEY[0]                                       ; snake_fsm:fsm1|RESET                         ; KEY[0]       ; clock       ; 0.000        ; 2.845      ; 3.529      ;
+; 0.445 ; snake_fsm:fsm1|current_state.GROW            ; snake_fsm:fsm1|current_state.GROW            ; clock        ; clock       ; 0.000        ; 0.000      ; 0.731      ;
+; 0.621 ; snake_fsm:fsm1|current_state.COLISION_CHECK  ; snake_fsm:fsm1|current_state.COLISION_VERIFY ; clock        ; clock       ; 0.000        ; 0.000      ; 0.907      ;
+; 0.621 ; snake_fsm:fsm1|current_state.COLISION_CHECK  ; snake_fsm:fsm1|COLISION_S                    ; clock        ; clock       ; 0.000        ; 0.000      ; 0.907      ;
+; 0.629 ; snake_fsm:fsm1|current_state.FOOD            ; snake_fsm:fsm1|current_state.WALK            ; clock        ; clock       ; 0.000        ; 0.000      ; 0.915      ;
+; 0.629 ; snake_fsm:fsm1|current_state.COLISION_VERIFY ; snake_fsm:fsm1|current_state.EAT_CHECK       ; clock        ; clock       ; 0.000        ; 0.000      ; 0.915      ;
+; 0.630 ; snake_fsm:fsm1|current_state.COLISION_VERIFY ; snake_fsm:fsm1|current_state.START           ; clock        ; clock       ; 0.000        ; 0.000      ; 0.916      ;
+; 0.631 ; snake_fsm:fsm1|current_state.WALK            ; snake_fsm:fsm1|current_state.COLISION_CHECK  ; clock        ; clock       ; 0.000        ; 0.000      ; 0.917      ;
+; 0.632 ; snake_fsm:fsm1|current_state.WALK            ; snake_fsm:fsm1|WALK_S                        ; clock        ; clock       ; 0.000        ; 0.000      ; 0.918      ;
+; 0.633 ; snake_fsm:fsm1|current_state.FOOD            ; snake_fsm:fsm1|FOOD_S                        ; clock        ; clock       ; 0.000        ; 0.000      ; 0.919      ;
+; 0.639 ; snake_fsm:fsm1|current_state.START           ; snake_fsm:fsm1|RESET                         ; clock        ; clock       ; 0.000        ; 0.000      ; 0.925      ;
+; 0.653 ; KEY[0]                                       ; snake_fsm:fsm1|current_state.WALK            ; KEY[0]       ; clock       ; -0.500       ; 2.845      ; 3.284      ;
+; 0.653 ; KEY[0]                                       ; snake_fsm:fsm1|current_state.COLISION_CHECK  ; KEY[0]       ; clock       ; -0.500       ; 2.845      ; 3.284      ;
+; 0.653 ; KEY[0]                                       ; snake_fsm:fsm1|current_state.COLISION_VERIFY ; KEY[0]       ; clock       ; -0.500       ; 2.845      ; 3.284      ;
+; 0.653 ; KEY[0]                                       ; snake_fsm:fsm1|current_state.EAT_CHECK       ; KEY[0]       ; clock       ; -0.500       ; 2.845      ; 3.284      ;
+; 0.653 ; KEY[0]                                       ; snake_fsm:fsm1|current_state.EAT_VERIFY      ; KEY[0]       ; clock       ; -0.500       ; 2.845      ; 3.284      ;
+; 0.653 ; KEY[0]                                       ; snake_fsm:fsm1|current_state.START           ; KEY[0]       ; clock       ; -0.500       ; 2.845      ; 3.284      ;
+; 0.653 ; KEY[0]                                       ; snake_fsm:fsm1|current_state.FOOD            ; KEY[0]       ; clock       ; -0.500       ; 2.845      ; 3.284      ;
+; 0.771 ; snake_fsm:fsm1|current_state.EAT_CHECK       ; snake_fsm:fsm1|current_state.EAT_VERIFY      ; clock        ; clock       ; 0.000        ; 0.000      ; 1.057      ;
+; 0.775 ; snake_fsm:fsm1|current_state.EAT_CHECK       ; snake_fsm:fsm1|EAT_S                         ; clock        ; clock       ; 0.000        ; 0.000      ; 1.061      ;
+; 0.780 ; snake_fsm:fsm1|current_state.EAT_VERIFY      ; snake_fsm:fsm1|current_state.WALK            ; clock        ; clock       ; 0.000        ; 0.000      ; 1.066      ;
+; 0.802 ; KEY[0]                                       ; snake_fsm:fsm1|current_state.GROW            ; KEY[0]       ; clock       ; -0.500       ; 2.844      ; 3.432      ;
+; 0.861 ; snake_fsm:fsm1|current_state.EAT_VERIFY      ; snake_fsm:fsm1|current_state.GROW            ; clock        ; clock       ; 0.000        ; -0.001     ; 1.146      ;
+; 0.898 ; KEY[0]                                       ; snake_fsm:fsm1|FOOD_S                        ; KEY[0]       ; clock       ; -0.500       ; 2.845      ; 3.529      ;
+; 0.898 ; KEY[0]                                       ; snake_fsm:fsm1|WALK_S                        ; KEY[0]       ; clock       ; -0.500       ; 2.845      ; 3.529      ;
+; 0.898 ; KEY[0]                                       ; snake_fsm:fsm1|COLISION_S                    ; KEY[0]       ; clock       ; -0.500       ; 2.845      ; 3.529      ;
+; 0.898 ; KEY[0]                                       ; snake_fsm:fsm1|EAT_S                         ; KEY[0]       ; clock       ; -0.500       ; 2.845      ; 3.529      ;
+; 0.898 ; KEY[0]                                       ; snake_fsm:fsm1|RESET                         ; KEY[0]       ; clock       ; -0.500       ; 2.845      ; 3.529      ;
+; 0.956 ; snake_fsm:fsm1|current_state.START           ; snake_fsm:fsm1|current_state.FOOD            ; clock        ; clock       ; 0.000        ; 0.000      ; 1.242      ;
+; 1.092 ; snake_fsm:fsm1|current_state.GROW            ; snake_fsm:fsm1|current_state.FOOD            ; clock        ; clock       ; 0.000        ; 0.001      ; 1.379      ;
+; 1.256 ; snake_fsm:fsm1|current_state.START           ; snake_fsm:fsm1|dir[0]~_emulated              ; clock        ; clock       ; 0.000        ; -0.001     ; 1.541      ;
+; 1.256 ; snake_fsm:fsm1|current_state.START           ; snake_fsm:fsm1|dir[1]~_emulated              ; clock        ; clock       ; 0.000        ; -0.001     ; 1.541      ;
+; 2.763 ; snake_fsm:fsm1|dir[0]~6                      ; snake_fsm:fsm1|dir[0]~_emulated              ; KEY[0]       ; clock       ; -0.500       ; -1.971     ; 0.578      ;
+; 2.771 ; snake_fsm:fsm1|dir[1]~1                      ; snake_fsm:fsm1|dir[1]~_emulated              ; KEY[0]       ; clock       ; -0.500       ; -1.971     ; 0.586      ;
++-------+----------------------------------------------+----------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Recovery: 'clock'                                                                                               ;
++--------+-----------+---------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node ; To Node                         ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------+---------------------------------+--------------+-------------+--------------+------------+------------+
+; -0.068 ; KEY[0]    ; snake_fsm:fsm1|dir[0]~_emulated ; KEY[0]       ; clock       ; 0.500        ; 2.844      ; 3.450      ;
+; -0.068 ; KEY[0]    ; snake_fsm:fsm1|dir[1]~_emulated ; KEY[0]       ; clock       ; 0.500        ; 2.844      ; 3.450      ;
+; 0.432  ; KEY[0]    ; snake_fsm:fsm1|dir[0]~_emulated ; KEY[0]       ; clock       ; 1.000        ; 2.844      ; 3.450      ;
+; 0.432  ; KEY[0]    ; snake_fsm:fsm1|dir[1]~_emulated ; KEY[0]       ; clock       ; 1.000        ; 2.844      ; 3.450      ;
++--------+-----------+---------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Removal: 'clock'                                                                                               ;
++-------+-----------+---------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node ; To Node                         ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------+---------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.320 ; KEY[0]    ; snake_fsm:fsm1|dir[0]~_emulated ; KEY[0]       ; clock       ; 0.000        ; 2.844      ; 3.450      ;
+; 0.320 ; KEY[0]    ; snake_fsm:fsm1|dir[1]~_emulated ; KEY[0]       ; clock       ; 0.000        ; 2.844      ; 3.450      ;
+; 0.820 ; KEY[0]    ; snake_fsm:fsm1|dir[0]~_emulated ; KEY[0]       ; clock       ; -0.500       ; 2.844      ; 3.450      ;
+; 0.820 ; KEY[0]    ; snake_fsm:fsm1|dir[1]~_emulated ; KEY[0]       ; clock       ; -0.500       ; 2.844      ; 3.450      ;
++-------+-----------+---------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'clock'                                                                                       ;
++--------+--------------+----------------+------------------+-------+------------+----------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                                       ;
++--------+--------------+----------------+------------------+-------+------------+----------------------------------------------+
+; -1.631 ; 1.000        ; 2.631          ; Port Rate        ; clock ; Rise       ; clock                                        ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clock ; Rise       ; snake_fsm:fsm1|COLISION_S                    ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clock ; Rise       ; snake_fsm:fsm1|COLISION_S                    ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clock ; Rise       ; snake_fsm:fsm1|EAT_S                         ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clock ; Rise       ; snake_fsm:fsm1|EAT_S                         ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clock ; Rise       ; snake_fsm:fsm1|FOOD_S                        ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clock ; Rise       ; snake_fsm:fsm1|FOOD_S                        ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clock ; Rise       ; snake_fsm:fsm1|RESET                         ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clock ; Rise       ; snake_fsm:fsm1|RESET                         ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clock ; Rise       ; snake_fsm:fsm1|WALK_S                        ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clock ; Rise       ; snake_fsm:fsm1|WALK_S                        ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clock ; Rise       ; snake_fsm:fsm1|current_state.COLISION_CHECK  ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clock ; Rise       ; snake_fsm:fsm1|current_state.COLISION_CHECK  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clock ; Rise       ; snake_fsm:fsm1|current_state.COLISION_VERIFY ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clock ; Rise       ; snake_fsm:fsm1|current_state.COLISION_VERIFY ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clock ; Rise       ; snake_fsm:fsm1|current_state.EAT_CHECK       ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clock ; Rise       ; snake_fsm:fsm1|current_state.EAT_CHECK       ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clock ; Rise       ; snake_fsm:fsm1|current_state.EAT_VERIFY      ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clock ; Rise       ; snake_fsm:fsm1|current_state.EAT_VERIFY      ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clock ; Rise       ; snake_fsm:fsm1|current_state.FOOD            ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clock ; Rise       ; snake_fsm:fsm1|current_state.FOOD            ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clock ; Rise       ; snake_fsm:fsm1|current_state.GROW            ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clock ; Rise       ; snake_fsm:fsm1|current_state.GROW            ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clock ; Rise       ; snake_fsm:fsm1|current_state.START           ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clock ; Rise       ; snake_fsm:fsm1|current_state.START           ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clock ; Rise       ; snake_fsm:fsm1|current_state.WALK            ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clock ; Rise       ; snake_fsm:fsm1|current_state.WALK            ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clock ; Rise       ; snake_fsm:fsm1|dir[0]~_emulated              ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clock ; Rise       ; snake_fsm:fsm1|dir[0]~_emulated              ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clock ; Rise       ; snake_fsm:fsm1|dir[1]~_emulated              ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clock ; Rise       ; snake_fsm:fsm1|dir[1]~_emulated              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; clock|combout                                ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; clock|combout                                ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; clock~clkctrl|inclk[0]                       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; clock~clkctrl|inclk[0]                       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; clock~clkctrl|outclk                         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; clock~clkctrl|outclk                         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; fsm1|COLISION_S|clk                          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; fsm1|COLISION_S|clk                          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; fsm1|EAT_S|clk                               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; fsm1|EAT_S|clk                               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; fsm1|FOOD_S|clk                              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; fsm1|FOOD_S|clk                              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; fsm1|RESET|clk                               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; fsm1|RESET|clk                               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; fsm1|WALK_S|clk                              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; fsm1|WALK_S|clk                              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; fsm1|current_state.COLISION_CHECK|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; fsm1|current_state.COLISION_CHECK|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; fsm1|current_state.COLISION_VERIFY|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; fsm1|current_state.COLISION_VERIFY|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; fsm1|current_state.EAT_CHECK|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; fsm1|current_state.EAT_CHECK|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; fsm1|current_state.EAT_VERIFY|clk            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; fsm1|current_state.EAT_VERIFY|clk            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; fsm1|current_state.FOOD|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; fsm1|current_state.FOOD|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; fsm1|current_state.GROW|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; fsm1|current_state.GROW|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; fsm1|current_state.START|clk                 ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; fsm1|current_state.START|clk                 ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; fsm1|current_state.WALK|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; fsm1|current_state.WALK|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; fsm1|dir[0]~_emulated|clk                    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; fsm1|dir[0]~_emulated|clk                    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; fsm1|dir[1]~_emulated|clk                    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; fsm1|dir[1]~_emulated|clk                    ;
++--------+--------------+----------------+------------------+-------+------------+----------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'KEY[0]'                                                                         ;
++--------+--------------+----------------+------------------+--------+------------+--------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock  ; Clock Edge ; Target                         ;
++--------+--------------+----------------+------------------+--------+------------+--------------------------------+
+; -1.469 ; 1.000        ; 2.469          ; Port Rate        ; KEY[0] ; Rise       ; KEY[0]                         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; KEY[0] ; Rise       ; KEY[0]|combout                 ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; KEY[0] ; Rise       ; KEY[0]|combout                 ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; KEY[0] ; Rise       ; fsm1|dir[0]~16clkctrl|inclk[0] ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; KEY[0] ; Rise       ; fsm1|dir[0]~16clkctrl|inclk[0] ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; KEY[0] ; Rise       ; fsm1|dir[0]~16clkctrl|outclk   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; KEY[0] ; Rise       ; fsm1|dir[0]~16clkctrl|outclk   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; KEY[0] ; Rise       ; fsm1|dir[0]~16|combout         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; KEY[0] ; Rise       ; fsm1|dir[0]~16|combout         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; KEY[0] ; Rise       ; fsm1|dir[0]~16|datad           ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; KEY[0] ; Rise       ; fsm1|dir[0]~16|datad           ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; KEY[0] ; Rise       ; fsm1|dir[0]~6|datac            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; KEY[0] ; Rise       ; fsm1|dir[0]~6|datac            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; KEY[0] ; Rise       ; fsm1|dir[1]~1|datac            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; KEY[0] ; Rise       ; fsm1|dir[1]~1|datac            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; KEY[0] ; Fall       ; snake_fsm:fsm1|dir[0]~6        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; KEY[0] ; Fall       ; snake_fsm:fsm1|dir[0]~6        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; KEY[0] ; Fall       ; snake_fsm:fsm1|dir[1]~1        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; KEY[0] ; Fall       ; snake_fsm:fsm1|dir[1]~1        ;
++--------+--------------+----------------+------------------+--------+------------+--------------------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; KEY[*]    ; KEY[0]     ; 6.883 ; 6.883 ; Fall       ; KEY[0]          ;
+;  KEY[0]   ; KEY[0]     ; 2.691 ; 2.691 ; Fall       ; KEY[0]          ;
+;  KEY[1]   ; KEY[0]     ; 6.883 ; 6.883 ; Fall       ; KEY[0]          ;
+; clear     ; KEY[0]     ; 3.081 ; 3.081 ; Fall       ; KEY[0]          ;
+; KEY[*]    ; clock      ; 4.524 ; 4.524 ; Rise       ; clock           ;
+;  KEY[0]   ; clock      ; 0.646 ; 0.646 ; Rise       ; clock           ;
+;  KEY[1]   ; clock      ; 4.524 ; 4.524 ; Rise       ; clock           ;
+; clear     ; clock      ; 1.143 ; 1.143 ; Rise       ; clock           ;
+; eaten     ; clock      ; 3.676 ; 3.676 ; Rise       ; clock           ;
+; hit       ; clock      ; 3.695 ; 3.695 ; Rise       ; clock           ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; KEY[*]    ; KEY[0]     ; 1.110  ; 1.110  ; Fall       ; KEY[0]          ;
+;  KEY[0]   ; KEY[0]     ; 1.110  ; 1.110  ; Fall       ; KEY[0]          ;
+;  KEY[1]   ; KEY[0]     ; -3.327 ; -3.327 ; Fall       ; KEY[0]          ;
+; clear     ; KEY[0]     ; 0.729  ; 0.729  ; Fall       ; KEY[0]          ;
+; KEY[*]    ; clock      ; -0.153 ; -0.153 ; Rise       ; clock           ;
+;  KEY[0]   ; clock      ; -0.153 ; -0.153 ; Rise       ; clock           ;
+;  KEY[1]   ; clock      ; -4.030 ; -4.030 ; Rise       ; clock           ;
+; clear     ; clock      ; -0.746 ; -0.746 ; Rise       ; clock           ;
+; eaten     ; clock      ; -3.185 ; -3.185 ; Rise       ; clock           ;
+; hit       ; clock      ; -3.351 ; -3.351 ; Rise       ; clock           ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++--------------------------------------------------------------------------+
+; Clock to Output Times                                                    ;
++------------+------------+--------+--------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++------------+------------+--------+--------+------------+-----------------+
+; dir[*]     ; KEY[0]     ; 10.432 ; 10.432 ; Rise       ; KEY[0]          ;
+;  dir[0]    ; KEY[0]     ; 10.432 ; 10.432 ; Rise       ; KEY[0]          ;
+;  dir[1]    ; KEY[0]     ; 9.712  ; 9.712  ; Rise       ; KEY[0]          ;
+; dir[*]     ; KEY[0]     ; 11.846 ; 11.846 ; Fall       ; KEY[0]          ;
+;  dir[0]    ; KEY[0]     ; 11.846 ; 11.846 ; Fall       ; KEY[0]          ;
+;  dir[1]    ; KEY[0]     ; 11.217 ; 11.217 ; Fall       ; KEY[0]          ;
+; COLISION_S ; clock      ; 7.081  ; 7.081  ; Rise       ; clock           ;
+; EAT_S      ; clock      ; 7.127  ; 7.127  ; Rise       ; clock           ;
+; FOOD_S     ; clock      ; 6.791  ; 6.791  ; Rise       ; clock           ;
+; RESET      ; clock      ; 6.805  ; 6.805  ; Rise       ; clock           ;
+; WALK_S     ; clock      ; 7.136  ; 7.136  ; Rise       ; clock           ;
+; dir[*]     ; clock      ; 10.354 ; 10.354 ; Rise       ; clock           ;
+;  dir[0]    ; clock      ; 10.354 ; 10.354 ; Rise       ; clock           ;
+;  dir[1]    ; clock      ; 9.725  ; 9.725  ; Rise       ; clock           ;
++------------+------------+--------+--------+------------+-----------------+
+
+
++------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                          ;
++------------+------------+-------+-------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++------------+------------+-------+-------+------------+-----------------+
+; dir[*]     ; KEY[0]     ; 5.707 ; 5.707 ; Rise       ; KEY[0]          ;
+;  dir[0]    ; KEY[0]     ; 6.059 ; 6.059 ; Rise       ; KEY[0]          ;
+;  dir[1]    ; KEY[0]     ; 5.707 ; 5.707 ; Rise       ; KEY[0]          ;
+; dir[*]     ; KEY[0]     ; 5.707 ; 5.707 ; Fall       ; KEY[0]          ;
+;  dir[0]    ; KEY[0]     ; 6.059 ; 6.059 ; Fall       ; KEY[0]          ;
+;  dir[1]    ; KEY[0]     ; 5.707 ; 5.707 ; Fall       ; KEY[0]          ;
+; COLISION_S ; clock      ; 7.081 ; 7.081 ; Rise       ; clock           ;
+; EAT_S      ; clock      ; 7.127 ; 7.127 ; Rise       ; clock           ;
+; FOOD_S     ; clock      ; 6.791 ; 6.791 ; Rise       ; clock           ;
+; RESET      ; clock      ; 6.805 ; 6.805 ; Rise       ; clock           ;
+; WALK_S     ; clock      ; 7.136 ; 7.136 ; Rise       ; clock           ;
+; dir[*]     ; clock      ; 7.798 ; 7.798 ; Rise       ; clock           ;
+;  dir[0]    ; clock      ; 8.153 ; 8.153 ; Rise       ; clock           ;
+;  dir[1]    ; clock      ; 7.798 ; 7.798 ; Rise       ; clock           ;
++------------+------------+-------+-------+------------+-----------------+
+
+
++--------------------------------------------------------------+
+; Propagation Delay                                            ;
++------------+-------------+--------+--------+--------+--------+
+; Input Port ; Output Port ; RR     ; RF     ; FR     ; FF     ;
++------------+-------------+--------+--------+--------+--------+
+; KEY[1]     ; dir[0]      ; 12.700 ; 12.700 ; 12.700 ; 12.700 ;
+; KEY[1]     ; dir[1]      ; 12.068 ; 12.068 ; 12.068 ; 12.068 ;
+; clear      ; dir[0]      ; 8.898  ; 8.898  ; 8.898  ; 8.898  ;
+; clear      ; dir[1]      ; 8.266  ; 8.266  ; 8.266  ; 8.266  ;
++------------+-------------+--------+--------+--------+--------+
+
+
++--------------------------------------------------------------+
+; Minimum Propagation Delay                                    ;
++------------+-------------+--------+--------+--------+--------+
+; Input Port ; Output Port ; RR     ; RF     ; FR     ; FF     ;
++------------+-------------+--------+--------+--------+--------+
+; KEY[1]     ; dir[0]      ; 10.496 ; 10.496 ; 10.496 ; 10.496 ;
+; KEY[1]     ; dir[1]      ; 10.144 ; 10.144 ; 10.144 ; 10.144 ;
+; clear      ; dir[0]      ; 6.440  ; 6.694  ; 6.694  ; 6.440  ;
+; clear      ; dir[1]      ; 6.087  ; 6.342  ; 6.342  ; 6.087  ;
++------------+-------------+--------+--------+--------+--------+
+
+
++---------------------------------+
+; Fast Model Setup Summary        ;
++--------+--------+---------------+
+; Clock  ; Slack  ; End Point TNS ;
++--------+--------+---------------+
+; KEY[0] ; -1.101 ; -2.144        ;
+; clock  ; -0.474 ; -0.943        ;
++--------+--------+---------------+
+
+
++---------------------------------+
+; Fast Model Hold Summary         ;
++--------+--------+---------------+
+; Clock  ; Slack  ; End Point TNS ;
++--------+--------+---------------+
+; KEY[0] ; -1.031 ; -1.880        ;
+; clock  ; -0.468 ; -5.236        ;
++--------+--------+---------------+
+
+
++-------------------------------+
+; Fast Model Recovery Summary   ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; clock ; 0.724 ; 0.000         ;
++-------+-------+---------------+
+
+
++--------------------------------+
+; Fast Model Removal Summary     ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; clock ; -0.344 ; -0.688        ;
++-------+--------+---------------+
+
+
++----------------------------------------+
+; Fast Model Minimum Pulse Width Summary ;
++--------+--------+----------------------+
+; Clock  ; Slack  ; End Point TNS        ;
++--------+--------+----------------------+
+; clock  ; -1.380 ; -16.380              ;
+; KEY[0] ; -1.222 ; -1.222               ;
++--------+--------+----------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'KEY[0]'                                                                                                               ;
++--------+---------------------------------+-------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                       ; To Node                 ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+---------------------------------+-------------------------+--------------+-------------+--------------+------------+------------+
+; -1.101 ; snake_fsm:fsm1|dir[0]~6         ; snake_fsm:fsm1|dir[0]~6 ; KEY[0]       ; KEY[0]      ; 1.000        ; 0.000      ; 1.710      ;
+; -1.063 ; snake_fsm:fsm1|dir[0]~_emulated ; snake_fsm:fsm1|dir[0]~6 ; clock        ; KEY[0]      ; 0.500        ; 0.766      ; 1.938      ;
+; -1.043 ; snake_fsm:fsm1|dir[1]~1         ; snake_fsm:fsm1|dir[1]~1 ; KEY[0]       ; KEY[0]      ; 1.000        ; 0.000      ; 1.635      ;
+; -1.009 ; snake_fsm:fsm1|dir[1]~_emulated ; snake_fsm:fsm1|dir[1]~1 ; clock        ; KEY[0]      ; 0.500        ; 0.766      ; 1.867      ;
+; -0.432 ; snake_fsm:fsm1|dir[1]~1         ; snake_fsm:fsm1|dir[0]~6 ; KEY[0]       ; KEY[0]      ; 1.000        ; 0.000      ; 1.041      ;
+; -0.398 ; snake_fsm:fsm1|dir[1]~_emulated ; snake_fsm:fsm1|dir[0]~6 ; clock        ; KEY[0]      ; 0.500        ; 0.766      ; 1.273      ;
+; -0.273 ; snake_fsm:fsm1|dir[0]~6         ; snake_fsm:fsm1|dir[1]~1 ; KEY[0]       ; KEY[0]      ; 1.000        ; 0.000      ; 0.865      ;
+; -0.235 ; snake_fsm:fsm1|dir[0]~_emulated ; snake_fsm:fsm1|dir[1]~1 ; clock        ; KEY[0]      ; 0.500        ; 0.766      ; 1.093      ;
+; 0.063  ; KEY[0]                          ; snake_fsm:fsm1|dir[0]~6 ; KEY[0]       ; KEY[0]      ; 0.500        ; 2.545      ; 2.591      ;
+; 0.259  ; KEY[0]                          ; snake_fsm:fsm1|dir[1]~1 ; KEY[0]       ; KEY[0]      ; 0.500        ; 2.545      ; 2.378      ;
+; 0.563  ; KEY[0]                          ; snake_fsm:fsm1|dir[0]~6 ; KEY[0]       ; KEY[0]      ; 1.000        ; 2.545      ; 2.591      ;
+; 0.759  ; KEY[0]                          ; snake_fsm:fsm1|dir[1]~1 ; KEY[0]       ; KEY[0]      ; 1.000        ; 2.545      ; 2.378      ;
++--------+---------------------------------+-------------------------+--------------+-------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'clock'                                                                                                                                                  ;
++--------+----------------------------------------------+----------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                    ; To Node                                      ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+----------------------------------------------+----------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -0.474 ; snake_fsm:fsm1|dir[1]~1                      ; snake_fsm:fsm1|dir[1]~_emulated              ; KEY[0]       ; clock       ; 0.500        ; -0.766     ; 0.240      ;
+; -0.469 ; snake_fsm:fsm1|dir[0]~6                      ; snake_fsm:fsm1|dir[0]~_emulated              ; KEY[0]       ; clock       ; 0.500        ; -0.766     ; 0.235      ;
+; 0.298  ; snake_fsm:fsm1|current_state.START           ; snake_fsm:fsm1|dir[0]~_emulated              ; clock        ; clock       ; 1.000        ; -0.001     ; 0.733      ;
+; 0.298  ; snake_fsm:fsm1|current_state.START           ; snake_fsm:fsm1|dir[1]~_emulated              ; clock        ; clock       ; 1.000        ; -0.001     ; 0.733      ;
+; 0.457  ; snake_fsm:fsm1|current_state.GROW            ; snake_fsm:fsm1|current_state.FOOD            ; clock        ; clock       ; 1.000        ; 0.001      ; 0.576      ;
+; 0.514  ; snake_fsm:fsm1|current_state.START           ; snake_fsm:fsm1|current_state.FOOD            ; clock        ; clock       ; 1.000        ; 0.000      ; 0.518      ;
+; 0.545  ; snake_fsm:fsm1|current_state.EAT_CHECK       ; snake_fsm:fsm1|EAT_S                         ; clock        ; clock       ; 1.000        ; 0.000      ; 0.487      ;
+; 0.551  ; snake_fsm:fsm1|current_state.EAT_CHECK       ; snake_fsm:fsm1|current_state.EAT_VERIFY      ; clock        ; clock       ; 1.000        ; 0.000      ; 0.481      ;
+; 0.554  ; snake_fsm:fsm1|current_state.EAT_VERIFY      ; snake_fsm:fsm1|current_state.GROW            ; clock        ; clock       ; 1.000        ; -0.001     ; 0.477      ;
+; 0.585  ; snake_fsm:fsm1|current_state.EAT_VERIFY      ; snake_fsm:fsm1|current_state.WALK            ; clock        ; clock       ; 1.000        ; 0.000      ; 0.447      ;
+; 0.614  ; snake_fsm:fsm1|current_state.COLISION_VERIFY ; snake_fsm:fsm1|current_state.START           ; clock        ; clock       ; 1.000        ; 0.000      ; 0.418      ;
+; 0.631  ; snake_fsm:fsm1|current_state.FOOD            ; snake_fsm:fsm1|FOOD_S                        ; clock        ; clock       ; 1.000        ; 0.000      ; 0.401      ;
+; 0.631  ; snake_fsm:fsm1|current_state.START           ; snake_fsm:fsm1|RESET                         ; clock        ; clock       ; 1.000        ; 0.000      ; 0.401      ;
+; 0.632  ; snake_fsm:fsm1|current_state.WALK            ; snake_fsm:fsm1|WALK_S                        ; clock        ; clock       ; 1.000        ; 0.000      ; 0.400      ;
+; 0.633  ; snake_fsm:fsm1|current_state.WALK            ; snake_fsm:fsm1|current_state.COLISION_CHECK  ; clock        ; clock       ; 1.000        ; 0.000      ; 0.399      ;
+; 0.635  ; snake_fsm:fsm1|current_state.COLISION_VERIFY ; snake_fsm:fsm1|current_state.EAT_CHECK       ; clock        ; clock       ; 1.000        ; 0.000      ; 0.397      ;
+; 0.635  ; snake_fsm:fsm1|current_state.FOOD            ; snake_fsm:fsm1|current_state.WALK            ; clock        ; clock       ; 1.000        ; 0.000      ; 0.397      ;
+; 0.639  ; snake_fsm:fsm1|current_state.COLISION_CHECK  ; snake_fsm:fsm1|current_state.COLISION_VERIFY ; clock        ; clock       ; 1.000        ; 0.000      ; 0.393      ;
+; 0.639  ; snake_fsm:fsm1|current_state.COLISION_CHECK  ; snake_fsm:fsm1|COLISION_S                    ; clock        ; clock       ; 1.000        ; 0.000      ; 0.393      ;
+; 0.665  ; snake_fsm:fsm1|current_state.GROW            ; snake_fsm:fsm1|current_state.GROW            ; clock        ; clock       ; 1.000        ; 0.000      ; 0.367      ;
+; 0.726  ; KEY[0]                                       ; snake_fsm:fsm1|FOOD_S                        ; KEY[0]       ; clock       ; 0.500        ; 1.780      ; 1.586      ;
+; 0.726  ; KEY[0]                                       ; snake_fsm:fsm1|WALK_S                        ; KEY[0]       ; clock       ; 0.500        ; 1.780      ; 1.586      ;
+; 0.726  ; KEY[0]                                       ; snake_fsm:fsm1|COLISION_S                    ; KEY[0]       ; clock       ; 0.500        ; 1.780      ; 1.586      ;
+; 0.726  ; KEY[0]                                       ; snake_fsm:fsm1|EAT_S                         ; KEY[0]       ; clock       ; 0.500        ; 1.780      ; 1.586      ;
+; 0.726  ; KEY[0]                                       ; snake_fsm:fsm1|RESET                         ; KEY[0]       ; clock       ; 0.500        ; 1.780      ; 1.586      ;
+; 0.814  ; KEY[0]                                       ; snake_fsm:fsm1|current_state.WALK            ; KEY[0]       ; clock       ; 0.500        ; 1.780      ; 1.498      ;
+; 0.814  ; KEY[0]                                       ; snake_fsm:fsm1|current_state.COLISION_CHECK  ; KEY[0]       ; clock       ; 0.500        ; 1.780      ; 1.498      ;
+; 0.814  ; KEY[0]                                       ; snake_fsm:fsm1|current_state.COLISION_VERIFY ; KEY[0]       ; clock       ; 0.500        ; 1.780      ; 1.498      ;
+; 0.814  ; KEY[0]                                       ; snake_fsm:fsm1|current_state.EAT_CHECK       ; KEY[0]       ; clock       ; 0.500        ; 1.780      ; 1.498      ;
+; 0.814  ; KEY[0]                                       ; snake_fsm:fsm1|current_state.EAT_VERIFY      ; KEY[0]       ; clock       ; 0.500        ; 1.780      ; 1.498      ;
+; 0.814  ; KEY[0]                                       ; snake_fsm:fsm1|current_state.START           ; KEY[0]       ; clock       ; 0.500        ; 1.780      ; 1.498      ;
+; 0.814  ; KEY[0]                                       ; snake_fsm:fsm1|current_state.FOOD            ; KEY[0]       ; clock       ; 0.500        ; 1.780      ; 1.498      ;
+; 0.848  ; KEY[0]                                       ; snake_fsm:fsm1|current_state.GROW            ; KEY[0]       ; clock       ; 0.500        ; 1.779      ; 1.463      ;
+; 1.226  ; KEY[0]                                       ; snake_fsm:fsm1|FOOD_S                        ; KEY[0]       ; clock       ; 1.000        ; 1.780      ; 1.586      ;
+; 1.226  ; KEY[0]                                       ; snake_fsm:fsm1|WALK_S                        ; KEY[0]       ; clock       ; 1.000        ; 1.780      ; 1.586      ;
+; 1.226  ; KEY[0]                                       ; snake_fsm:fsm1|COLISION_S                    ; KEY[0]       ; clock       ; 1.000        ; 1.780      ; 1.586      ;
+; 1.226  ; KEY[0]                                       ; snake_fsm:fsm1|EAT_S                         ; KEY[0]       ; clock       ; 1.000        ; 1.780      ; 1.586      ;
+; 1.226  ; KEY[0]                                       ; snake_fsm:fsm1|RESET                         ; KEY[0]       ; clock       ; 1.000        ; 1.780      ; 1.586      ;
+; 1.314  ; KEY[0]                                       ; snake_fsm:fsm1|current_state.WALK            ; KEY[0]       ; clock       ; 1.000        ; 1.780      ; 1.498      ;
+; 1.314  ; KEY[0]                                       ; snake_fsm:fsm1|current_state.COLISION_CHECK  ; KEY[0]       ; clock       ; 1.000        ; 1.780      ; 1.498      ;
+; 1.314  ; KEY[0]                                       ; snake_fsm:fsm1|current_state.COLISION_VERIFY ; KEY[0]       ; clock       ; 1.000        ; 1.780      ; 1.498      ;
+; 1.314  ; KEY[0]                                       ; snake_fsm:fsm1|current_state.EAT_CHECK       ; KEY[0]       ; clock       ; 1.000        ; 1.780      ; 1.498      ;
+; 1.314  ; KEY[0]                                       ; snake_fsm:fsm1|current_state.EAT_VERIFY      ; KEY[0]       ; clock       ; 1.000        ; 1.780      ; 1.498      ;
+; 1.314  ; KEY[0]                                       ; snake_fsm:fsm1|current_state.START           ; KEY[0]       ; clock       ; 1.000        ; 1.780      ; 1.498      ;
+; 1.314  ; KEY[0]                                       ; snake_fsm:fsm1|current_state.FOOD            ; KEY[0]       ; clock       ; 1.000        ; 1.780      ; 1.498      ;
+; 1.348  ; KEY[0]                                       ; snake_fsm:fsm1|current_state.GROW            ; KEY[0]       ; clock       ; 1.000        ; 1.779      ; 1.463      ;
++--------+----------------------------------------------+----------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'KEY[0]'                                                                                                                ;
++--------+---------------------------------+-------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                       ; To Node                 ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+---------------------------------+-------------------------+--------------+-------------+--------------+------------+------------+
+; -1.031 ; KEY[0]                          ; snake_fsm:fsm1|dir[1]~1 ; KEY[0]       ; KEY[0]      ; 0.000        ; 2.545      ; 1.514      ;
+; -0.849 ; KEY[0]                          ; snake_fsm:fsm1|dir[0]~6 ; KEY[0]       ; KEY[0]      ; 0.000        ; 2.545      ; 1.696      ;
+; -0.531 ; KEY[0]                          ; snake_fsm:fsm1|dir[1]~1 ; KEY[0]       ; KEY[0]      ; -0.500       ; 2.545      ; 1.514      ;
+; -0.349 ; KEY[0]                          ; snake_fsm:fsm1|dir[0]~6 ; KEY[0]       ; KEY[0]      ; -0.500       ; 2.545      ; 1.696      ;
+; 0.827  ; snake_fsm:fsm1|dir[0]~_emulated ; snake_fsm:fsm1|dir[1]~1 ; clock        ; KEY[0]      ; -0.500       ; 0.766      ; 1.093      ;
+; 0.865  ; snake_fsm:fsm1|dir[0]~6         ; snake_fsm:fsm1|dir[1]~1 ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.000      ; 0.865      ;
+; 1.007  ; snake_fsm:fsm1|dir[1]~_emulated ; snake_fsm:fsm1|dir[0]~6 ; clock        ; KEY[0]      ; -0.500       ; 0.766      ; 1.273      ;
+; 1.041  ; snake_fsm:fsm1|dir[1]~1         ; snake_fsm:fsm1|dir[0]~6 ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.000      ; 1.041      ;
+; 1.601  ; snake_fsm:fsm1|dir[1]~_emulated ; snake_fsm:fsm1|dir[1]~1 ; clock        ; KEY[0]      ; -0.500       ; 0.766      ; 1.867      ;
+; 1.635  ; snake_fsm:fsm1|dir[1]~1         ; snake_fsm:fsm1|dir[1]~1 ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.000      ; 1.635      ;
+; 1.672  ; snake_fsm:fsm1|dir[0]~_emulated ; snake_fsm:fsm1|dir[0]~6 ; clock        ; KEY[0]      ; -0.500       ; 0.766      ; 1.938      ;
+; 1.710  ; snake_fsm:fsm1|dir[0]~6         ; snake_fsm:fsm1|dir[0]~6 ; KEY[0]       ; KEY[0]      ; 0.000        ; 0.000      ; 1.710      ;
++--------+---------------------------------+-------------------------+--------------+-------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'clock'                                                                                                                                                   ;
++--------+----------------------------------------------+----------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                    ; To Node                                      ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+----------------------------------------------+----------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -0.468 ; KEY[0]                                       ; snake_fsm:fsm1|current_state.GROW            ; KEY[0]       ; clock       ; 0.000        ; 1.779      ; 1.463      ;
+; -0.434 ; KEY[0]                                       ; snake_fsm:fsm1|current_state.WALK            ; KEY[0]       ; clock       ; 0.000        ; 1.780      ; 1.498      ;
+; -0.434 ; KEY[0]                                       ; snake_fsm:fsm1|current_state.COLISION_CHECK  ; KEY[0]       ; clock       ; 0.000        ; 1.780      ; 1.498      ;
+; -0.434 ; KEY[0]                                       ; snake_fsm:fsm1|current_state.COLISION_VERIFY ; KEY[0]       ; clock       ; 0.000        ; 1.780      ; 1.498      ;
+; -0.434 ; KEY[0]                                       ; snake_fsm:fsm1|current_state.EAT_CHECK       ; KEY[0]       ; clock       ; 0.000        ; 1.780      ; 1.498      ;
+; -0.434 ; KEY[0]                                       ; snake_fsm:fsm1|current_state.EAT_VERIFY      ; KEY[0]       ; clock       ; 0.000        ; 1.780      ; 1.498      ;
+; -0.434 ; KEY[0]                                       ; snake_fsm:fsm1|current_state.START           ; KEY[0]       ; clock       ; 0.000        ; 1.780      ; 1.498      ;
+; -0.434 ; KEY[0]                                       ; snake_fsm:fsm1|current_state.FOOD            ; KEY[0]       ; clock       ; 0.000        ; 1.780      ; 1.498      ;
+; -0.346 ; KEY[0]                                       ; snake_fsm:fsm1|FOOD_S                        ; KEY[0]       ; clock       ; 0.000        ; 1.780      ; 1.586      ;
+; -0.346 ; KEY[0]                                       ; snake_fsm:fsm1|WALK_S                        ; KEY[0]       ; clock       ; 0.000        ; 1.780      ; 1.586      ;
+; -0.346 ; KEY[0]                                       ; snake_fsm:fsm1|COLISION_S                    ; KEY[0]       ; clock       ; 0.000        ; 1.780      ; 1.586      ;
+; -0.346 ; KEY[0]                                       ; snake_fsm:fsm1|EAT_S                         ; KEY[0]       ; clock       ; 0.000        ; 1.780      ; 1.586      ;
+; -0.346 ; KEY[0]                                       ; snake_fsm:fsm1|RESET                         ; KEY[0]       ; clock       ; 0.000        ; 1.780      ; 1.586      ;
+; 0.032  ; KEY[0]                                       ; snake_fsm:fsm1|current_state.GROW            ; KEY[0]       ; clock       ; -0.500       ; 1.779      ; 1.463      ;
+; 0.066  ; KEY[0]                                       ; snake_fsm:fsm1|current_state.WALK            ; KEY[0]       ; clock       ; -0.500       ; 1.780      ; 1.498      ;
+; 0.066  ; KEY[0]                                       ; snake_fsm:fsm1|current_state.COLISION_CHECK  ; KEY[0]       ; clock       ; -0.500       ; 1.780      ; 1.498      ;
+; 0.066  ; KEY[0]                                       ; snake_fsm:fsm1|current_state.COLISION_VERIFY ; KEY[0]       ; clock       ; -0.500       ; 1.780      ; 1.498      ;
+; 0.066  ; KEY[0]                                       ; snake_fsm:fsm1|current_state.EAT_CHECK       ; KEY[0]       ; clock       ; -0.500       ; 1.780      ; 1.498      ;
+; 0.066  ; KEY[0]                                       ; snake_fsm:fsm1|current_state.EAT_VERIFY      ; KEY[0]       ; clock       ; -0.500       ; 1.780      ; 1.498      ;
+; 0.066  ; KEY[0]                                       ; snake_fsm:fsm1|current_state.START           ; KEY[0]       ; clock       ; -0.500       ; 1.780      ; 1.498      ;
+; 0.066  ; KEY[0]                                       ; snake_fsm:fsm1|current_state.FOOD            ; KEY[0]       ; clock       ; -0.500       ; 1.780      ; 1.498      ;
+; 0.154  ; KEY[0]                                       ; snake_fsm:fsm1|FOOD_S                        ; KEY[0]       ; clock       ; -0.500       ; 1.780      ; 1.586      ;
+; 0.154  ; KEY[0]                                       ; snake_fsm:fsm1|WALK_S                        ; KEY[0]       ; clock       ; -0.500       ; 1.780      ; 1.586      ;
+; 0.154  ; KEY[0]                                       ; snake_fsm:fsm1|COLISION_S                    ; KEY[0]       ; clock       ; -0.500       ; 1.780      ; 1.586      ;
+; 0.154  ; KEY[0]                                       ; snake_fsm:fsm1|EAT_S                         ; KEY[0]       ; clock       ; -0.500       ; 1.780      ; 1.586      ;
+; 0.154  ; KEY[0]                                       ; snake_fsm:fsm1|RESET                         ; KEY[0]       ; clock       ; -0.500       ; 1.780      ; 1.586      ;
+; 0.215  ; snake_fsm:fsm1|current_state.GROW            ; snake_fsm:fsm1|current_state.GROW            ; clock        ; clock       ; 0.000        ; 0.000      ; 0.367      ;
+; 0.241  ; snake_fsm:fsm1|current_state.COLISION_CHECK  ; snake_fsm:fsm1|current_state.COLISION_VERIFY ; clock        ; clock       ; 0.000        ; 0.000      ; 0.393      ;
+; 0.241  ; snake_fsm:fsm1|current_state.COLISION_CHECK  ; snake_fsm:fsm1|COLISION_S                    ; clock        ; clock       ; 0.000        ; 0.000      ; 0.393      ;
+; 0.245  ; snake_fsm:fsm1|current_state.FOOD            ; snake_fsm:fsm1|current_state.WALK            ; clock        ; clock       ; 0.000        ; 0.000      ; 0.397      ;
+; 0.245  ; snake_fsm:fsm1|current_state.COLISION_VERIFY ; snake_fsm:fsm1|current_state.EAT_CHECK       ; clock        ; clock       ; 0.000        ; 0.000      ; 0.397      ;
+; 0.247  ; snake_fsm:fsm1|current_state.WALK            ; snake_fsm:fsm1|current_state.COLISION_CHECK  ; clock        ; clock       ; 0.000        ; 0.000      ; 0.399      ;
+; 0.248  ; snake_fsm:fsm1|current_state.WALK            ; snake_fsm:fsm1|WALK_S                        ; clock        ; clock       ; 0.000        ; 0.000      ; 0.400      ;
+; 0.249  ; snake_fsm:fsm1|current_state.FOOD            ; snake_fsm:fsm1|FOOD_S                        ; clock        ; clock       ; 0.000        ; 0.000      ; 0.401      ;
+; 0.249  ; snake_fsm:fsm1|current_state.START           ; snake_fsm:fsm1|RESET                         ; clock        ; clock       ; 0.000        ; 0.000      ; 0.401      ;
+; 0.266  ; snake_fsm:fsm1|current_state.COLISION_VERIFY ; snake_fsm:fsm1|current_state.START           ; clock        ; clock       ; 0.000        ; 0.000      ; 0.418      ;
+; 0.295  ; snake_fsm:fsm1|current_state.EAT_VERIFY      ; snake_fsm:fsm1|current_state.WALK            ; clock        ; clock       ; 0.000        ; 0.000      ; 0.447      ;
+; 0.326  ; snake_fsm:fsm1|current_state.EAT_VERIFY      ; snake_fsm:fsm1|current_state.GROW            ; clock        ; clock       ; 0.000        ; -0.001     ; 0.477      ;
+; 0.329  ; snake_fsm:fsm1|current_state.EAT_CHECK       ; snake_fsm:fsm1|current_state.EAT_VERIFY      ; clock        ; clock       ; 0.000        ; 0.000      ; 0.481      ;
+; 0.335  ; snake_fsm:fsm1|current_state.EAT_CHECK       ; snake_fsm:fsm1|EAT_S                         ; clock        ; clock       ; 0.000        ; 0.000      ; 0.487      ;
+; 0.366  ; snake_fsm:fsm1|current_state.START           ; snake_fsm:fsm1|current_state.FOOD            ; clock        ; clock       ; 0.000        ; 0.000      ; 0.518      ;
+; 0.423  ; snake_fsm:fsm1|current_state.GROW            ; snake_fsm:fsm1|current_state.FOOD            ; clock        ; clock       ; 0.000        ; 0.001      ; 0.576      ;
+; 0.582  ; snake_fsm:fsm1|current_state.START           ; snake_fsm:fsm1|dir[0]~_emulated              ; clock        ; clock       ; 0.000        ; -0.001     ; 0.733      ;
+; 0.582  ; snake_fsm:fsm1|current_state.START           ; snake_fsm:fsm1|dir[1]~_emulated              ; clock        ; clock       ; 0.000        ; -0.001     ; 0.733      ;
+; 1.349  ; snake_fsm:fsm1|dir[0]~6                      ; snake_fsm:fsm1|dir[0]~_emulated              ; KEY[0]       ; clock       ; -0.500       ; -0.766     ; 0.235      ;
+; 1.354  ; snake_fsm:fsm1|dir[1]~1                      ; snake_fsm:fsm1|dir[1]~_emulated              ; KEY[0]       ; clock       ; -0.500       ; -0.766     ; 0.240      ;
++--------+----------------------------------------------+----------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Recovery: 'clock'                                                                                              ;
++-------+-----------+---------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node ; To Node                         ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------+---------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.724 ; KEY[0]    ; snake_fsm:fsm1|dir[0]~_emulated ; KEY[0]       ; clock       ; 0.500        ; 1.779      ; 1.587      ;
+; 0.724 ; KEY[0]    ; snake_fsm:fsm1|dir[1]~_emulated ; KEY[0]       ; clock       ; 0.500        ; 1.779      ; 1.587      ;
+; 1.224 ; KEY[0]    ; snake_fsm:fsm1|dir[0]~_emulated ; KEY[0]       ; clock       ; 1.000        ; 1.779      ; 1.587      ;
+; 1.224 ; KEY[0]    ; snake_fsm:fsm1|dir[1]~_emulated ; KEY[0]       ; clock       ; 1.000        ; 1.779      ; 1.587      ;
++-------+-----------+---------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Removal: 'clock'                                                                                                ;
++--------+-----------+---------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node ; To Node                         ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------+---------------------------------+--------------+-------------+--------------+------------+------------+
+; -0.344 ; KEY[0]    ; snake_fsm:fsm1|dir[0]~_emulated ; KEY[0]       ; clock       ; 0.000        ; 1.779      ; 1.587      ;
+; -0.344 ; KEY[0]    ; snake_fsm:fsm1|dir[1]~_emulated ; KEY[0]       ; clock       ; 0.000        ; 1.779      ; 1.587      ;
+; 0.156  ; KEY[0]    ; snake_fsm:fsm1|dir[0]~_emulated ; KEY[0]       ; clock       ; -0.500       ; 1.779      ; 1.587      ;
+; 0.156  ; KEY[0]    ; snake_fsm:fsm1|dir[1]~_emulated ; KEY[0]       ; clock       ; -0.500       ; 1.779      ; 1.587      ;
++--------+-----------+---------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'clock'                                                                                       ;
++--------+--------------+----------------+------------------+-------+------------+----------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                                       ;
++--------+--------------+----------------+------------------+-------+------------+----------------------------------------------+
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; clock ; Rise       ; clock                                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; snake_fsm:fsm1|COLISION_S                    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; snake_fsm:fsm1|COLISION_S                    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; snake_fsm:fsm1|EAT_S                         ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; snake_fsm:fsm1|EAT_S                         ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; snake_fsm:fsm1|FOOD_S                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; snake_fsm:fsm1|FOOD_S                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; snake_fsm:fsm1|RESET                         ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; snake_fsm:fsm1|RESET                         ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; snake_fsm:fsm1|WALK_S                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; snake_fsm:fsm1|WALK_S                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; snake_fsm:fsm1|current_state.COLISION_CHECK  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; snake_fsm:fsm1|current_state.COLISION_CHECK  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; snake_fsm:fsm1|current_state.COLISION_VERIFY ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; snake_fsm:fsm1|current_state.COLISION_VERIFY ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; snake_fsm:fsm1|current_state.EAT_CHECK       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; snake_fsm:fsm1|current_state.EAT_CHECK       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; snake_fsm:fsm1|current_state.EAT_VERIFY      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; snake_fsm:fsm1|current_state.EAT_VERIFY      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; snake_fsm:fsm1|current_state.FOOD            ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; snake_fsm:fsm1|current_state.FOOD            ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; snake_fsm:fsm1|current_state.GROW            ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; snake_fsm:fsm1|current_state.GROW            ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; snake_fsm:fsm1|current_state.START           ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; snake_fsm:fsm1|current_state.START           ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; snake_fsm:fsm1|current_state.WALK            ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; snake_fsm:fsm1|current_state.WALK            ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; snake_fsm:fsm1|dir[0]~_emulated              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; snake_fsm:fsm1|dir[0]~_emulated              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; snake_fsm:fsm1|dir[1]~_emulated              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; snake_fsm:fsm1|dir[1]~_emulated              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; clock|combout                                ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; clock|combout                                ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; clock~clkctrl|inclk[0]                       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; clock~clkctrl|inclk[0]                       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; clock~clkctrl|outclk                         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; clock~clkctrl|outclk                         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; fsm1|COLISION_S|clk                          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; fsm1|COLISION_S|clk                          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; fsm1|EAT_S|clk                               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; fsm1|EAT_S|clk                               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; fsm1|FOOD_S|clk                              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; fsm1|FOOD_S|clk                              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; fsm1|RESET|clk                               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; fsm1|RESET|clk                               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; fsm1|WALK_S|clk                              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; fsm1|WALK_S|clk                              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; fsm1|current_state.COLISION_CHECK|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; fsm1|current_state.COLISION_CHECK|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; fsm1|current_state.COLISION_VERIFY|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; fsm1|current_state.COLISION_VERIFY|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; fsm1|current_state.EAT_CHECK|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; fsm1|current_state.EAT_CHECK|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; fsm1|current_state.EAT_VERIFY|clk            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; fsm1|current_state.EAT_VERIFY|clk            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; fsm1|current_state.FOOD|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; fsm1|current_state.FOOD|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; fsm1|current_state.GROW|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; fsm1|current_state.GROW|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; fsm1|current_state.START|clk                 ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; fsm1|current_state.START|clk                 ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; fsm1|current_state.WALK|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; fsm1|current_state.WALK|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; fsm1|dir[0]~_emulated|clk                    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; fsm1|dir[0]~_emulated|clk                    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; fsm1|dir[1]~_emulated|clk                    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; fsm1|dir[1]~_emulated|clk                    ;
++--------+--------------+----------------+------------------+-------+------------+----------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'KEY[0]'                                                                         ;
++--------+--------------+----------------+------------------+--------+------------+--------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock  ; Clock Edge ; Target                         ;
++--------+--------------+----------------+------------------+--------+------------+--------------------------------+
+; -1.222 ; 1.000        ; 2.222          ; Port Rate        ; KEY[0] ; Rise       ; KEY[0]                         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; KEY[0] ; Rise       ; KEY[0]|combout                 ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; KEY[0] ; Rise       ; KEY[0]|combout                 ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; KEY[0] ; Rise       ; fsm1|dir[0]~16clkctrl|inclk[0] ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; KEY[0] ; Rise       ; fsm1|dir[0]~16clkctrl|inclk[0] ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; KEY[0] ; Rise       ; fsm1|dir[0]~16clkctrl|outclk   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; KEY[0] ; Rise       ; fsm1|dir[0]~16clkctrl|outclk   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; KEY[0] ; Rise       ; fsm1|dir[0]~16|combout         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; KEY[0] ; Rise       ; fsm1|dir[0]~16|combout         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; KEY[0] ; Rise       ; fsm1|dir[0]~16|datad           ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; KEY[0] ; Rise       ; fsm1|dir[0]~16|datad           ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; KEY[0] ; Rise       ; fsm1|dir[0]~6|datac            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; KEY[0] ; Rise       ; fsm1|dir[0]~6|datac            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; KEY[0] ; Rise       ; fsm1|dir[1]~1|datac            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; KEY[0] ; Rise       ; fsm1|dir[1]~1|datac            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; KEY[0] ; Fall       ; snake_fsm:fsm1|dir[0]~6        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; KEY[0] ; Fall       ; snake_fsm:fsm1|dir[0]~6        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; KEY[0] ; Fall       ; snake_fsm:fsm1|dir[1]~1        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; KEY[0] ; Fall       ; snake_fsm:fsm1|dir[1]~1        ;
++--------+--------------+----------------+------------------+--------+------------+--------------------------------+
+
+
++-------------------------------------------------------------------------+
+; Setup Times                                                             ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; KEY[*]    ; KEY[0]     ; 2.704  ; 2.704  ; Fall       ; KEY[0]          ;
+;  KEY[0]   ; KEY[0]     ; 0.437  ; 0.437  ; Fall       ; KEY[0]          ;
+;  KEY[1]   ; KEY[0]     ; 2.704  ; 2.704  ; Fall       ; KEY[0]          ;
+; clear     ; KEY[0]     ; 0.511  ; 0.511  ; Fall       ; KEY[0]          ;
+; KEY[*]    ; clock      ; 2.073  ; 2.073  ; Rise       ; clock           ;
+;  KEY[0]   ; clock      ; -0.226 ; -0.226 ; Rise       ; clock           ;
+;  KEY[1]   ; clock      ; 2.073  ; 2.073  ; Rise       ; clock           ;
+; clear     ; clock      ; -0.006 ; -0.006 ; Rise       ; clock           ;
+; eaten     ; clock      ; 1.672  ; 1.672  ; Rise       ; clock           ;
+; hit       ; clock      ; 1.654  ; 1.654  ; Rise       ; clock           ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; KEY[*]    ; KEY[0]     ; 1.031  ; 1.031  ; Fall       ; KEY[0]          ;
+;  KEY[0]   ; KEY[0]     ; 1.031  ; 1.031  ; Fall       ; KEY[0]          ;
+;  KEY[1]   ; KEY[0]     ; -1.468 ; -1.468 ; Fall       ; KEY[0]          ;
+; clear     ; KEY[0]     ; 0.820  ; 0.820  ; Fall       ; KEY[0]          ;
+; KEY[*]    ; clock      ; 0.468  ; 0.468  ; Rise       ; clock           ;
+;  KEY[0]   ; clock      ; 0.468  ; 0.468  ; Rise       ; clock           ;
+;  KEY[1]   ; clock      ; -1.831 ; -1.831 ; Rise       ; clock           ;
+; clear     ; clock      ; 0.160  ; 0.160  ; Rise       ; clock           ;
+; eaten     ; clock      ; -1.456 ; -1.456 ; Rise       ; clock           ;
+; hit       ; clock      ; -1.532 ; -1.532 ; Rise       ; clock           ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++------------------------------------------------------------------------+
+; Clock to Output Times                                                  ;
++------------+------------+-------+-------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++------------+------------+-------+-------+------------+-----------------+
+; dir[*]     ; KEY[0]     ; 4.476 ; 4.476 ; Rise       ; KEY[0]          ;
+;  dir[0]    ; KEY[0]     ; 4.476 ; 4.476 ; Rise       ; KEY[0]          ;
+;  dir[1]    ; KEY[0]     ; 4.197 ; 4.197 ; Rise       ; KEY[0]          ;
+; dir[*]     ; KEY[0]     ; 5.471 ; 5.471 ; Fall       ; KEY[0]          ;
+;  dir[0]    ; KEY[0]     ; 5.471 ; 5.471 ; Fall       ; KEY[0]          ;
+;  dir[1]    ; KEY[0]     ; 5.229 ; 5.229 ; Fall       ; KEY[0]          ;
+; COLISION_S ; clock      ; 3.773 ; 3.773 ; Rise       ; clock           ;
+; EAT_S      ; clock      ; 3.804 ; 3.804 ; Rise       ; clock           ;
+; FOOD_S     ; clock      ; 3.674 ; 3.674 ; Rise       ; clock           ;
+; RESET      ; clock      ; 3.691 ; 3.691 ; Rise       ; clock           ;
+; WALK_S     ; clock      ; 3.811 ; 3.811 ; Rise       ; clock           ;
+; dir[*]     ; clock      ; 4.937 ; 4.937 ; Rise       ; clock           ;
+;  dir[0]    ; clock      ; 4.937 ; 4.937 ; Rise       ; clock           ;
+;  dir[1]    ; clock      ; 4.691 ; 4.691 ; Rise       ; clock           ;
++------------+------------+-------+-------+------------+-----------------+
+
+
++------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                          ;
++------------+------------+-------+-------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++------------+------------+-------+-------+------------+-----------------+
+; dir[*]     ; KEY[0]     ; 2.670 ; 2.670 ; Rise       ; KEY[0]          ;
+;  dir[0]    ; KEY[0]     ; 2.805 ; 2.805 ; Rise       ; KEY[0]          ;
+;  dir[1]    ; KEY[0]     ; 2.670 ; 2.670 ; Rise       ; KEY[0]          ;
+; dir[*]     ; KEY[0]     ; 2.670 ; 2.670 ; Fall       ; KEY[0]          ;
+;  dir[0]    ; KEY[0]     ; 2.805 ; 2.805 ; Fall       ; KEY[0]          ;
+;  dir[1]    ; KEY[0]     ; 2.670 ; 2.670 ; Fall       ; KEY[0]          ;
+; COLISION_S ; clock      ; 3.773 ; 3.773 ; Rise       ; clock           ;
+; EAT_S      ; clock      ; 3.804 ; 3.804 ; Rise       ; clock           ;
+; FOOD_S     ; clock      ; 3.674 ; 3.674 ; Rise       ; clock           ;
+; RESET      ; clock      ; 3.691 ; 3.691 ; Rise       ; clock           ;
+; WALK_S     ; clock      ; 3.811 ; 3.811 ; Rise       ; clock           ;
+; dir[*]     ; clock      ; 4.026 ; 4.026 ; Rise       ; clock           ;
+;  dir[0]    ; clock      ; 4.163 ; 4.163 ; Rise       ; clock           ;
+;  dir[1]    ; clock      ; 4.026 ; 4.026 ; Rise       ; clock           ;
++------------+------------+-------+-------+------------+-----------------+
+
+
++----------------------------------------------------------+
+; Propagation Delay                                        ;
++------------+-------------+-------+-------+-------+-------+
+; Input Port ; Output Port ; RR    ; RF    ; FR    ; FF    ;
++------------+-------------+-------+-------+-------+-------+
+; KEY[1]     ; dir[0]      ; 6.080 ; 6.080 ; 6.080 ; 6.080 ;
+; KEY[1]     ; dir[1]      ; 5.832 ; 5.832 ; 5.832 ; 5.832 ;
+; clear      ; dir[0]      ; 3.887 ; 3.887 ; 3.887 ; 3.887 ;
+; clear      ; dir[1]      ; 3.639 ; 3.639 ; 3.639 ; 3.639 ;
++------------+-------------+-------+-------+-------+-------+
+
+
++----------------------------------------------------------+
+; Minimum Propagation Delay                                ;
++------------+-------------+-------+-------+-------+-------+
+; Input Port ; Output Port ; RR    ; RF    ; FR    ; FF    ;
++------------+-------------+-------+-------+-------+-------+
+; KEY[1]     ; dir[0]      ; 5.304 ; 5.304 ; 5.304 ; 5.304 ;
+; KEY[1]     ; dir[1]      ; 5.169 ; 5.169 ; 5.169 ; 5.169 ;
+; clear      ; dir[0]      ; 3.016 ; 3.111 ; 3.111 ; 3.016 ;
+; clear      ; dir[1]      ; 2.879 ; 2.976 ; 2.976 ; 2.879 ;
++------------+-------------+-------+-------+-------+-------+
+
+
++--------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                            ;
++------------------+---------+--------+----------+---------+---------------------+
+; Clock            ; Setup   ; Hold   ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+---------+--------+----------+---------+---------------------+
+; Worst-case Slack ; -5.032  ; -1.110 ; -0.068   ; -0.344  ; -1.631              ;
+;  KEY[0]          ; -5.032  ; -1.110 ; N/A      ; N/A     ; -1.469              ;
+;  clock           ; -2.019  ; -0.468 ; -0.068   ; -0.344  ; -1.631              ;
+; Design-wide TNS  ; -15.158 ; -7.116 ; -0.136   ; -0.688  ; -21.43              ;
+;  KEY[0]          ; -9.902  ; -1.880 ; N/A      ; N/A     ; -1.469              ;
+;  clock           ; -5.256  ; -5.236 ; -0.136   ; -0.688  ; -19.961             ;
++------------------+---------+--------+----------+---------+---------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; KEY[*]    ; KEY[0]     ; 6.883 ; 6.883 ; Fall       ; KEY[0]          ;
+;  KEY[0]   ; KEY[0]     ; 2.691 ; 2.691 ; Fall       ; KEY[0]          ;
+;  KEY[1]   ; KEY[0]     ; 6.883 ; 6.883 ; Fall       ; KEY[0]          ;
+; clear     ; KEY[0]     ; 3.081 ; 3.081 ; Fall       ; KEY[0]          ;
+; KEY[*]    ; clock      ; 4.524 ; 4.524 ; Rise       ; clock           ;
+;  KEY[0]   ; clock      ; 0.646 ; 0.646 ; Rise       ; clock           ;
+;  KEY[1]   ; clock      ; 4.524 ; 4.524 ; Rise       ; clock           ;
+; clear     ; clock      ; 1.143 ; 1.143 ; Rise       ; clock           ;
+; eaten     ; clock      ; 3.676 ; 3.676 ; Rise       ; clock           ;
+; hit       ; clock      ; 3.695 ; 3.695 ; Rise       ; clock           ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; KEY[*]    ; KEY[0]     ; 1.110  ; 1.110  ; Fall       ; KEY[0]          ;
+;  KEY[0]   ; KEY[0]     ; 1.110  ; 1.110  ; Fall       ; KEY[0]          ;
+;  KEY[1]   ; KEY[0]     ; -1.468 ; -1.468 ; Fall       ; KEY[0]          ;
+; clear     ; KEY[0]     ; 0.820  ; 0.820  ; Fall       ; KEY[0]          ;
+; KEY[*]    ; clock      ; 0.468  ; 0.468  ; Rise       ; clock           ;
+;  KEY[0]   ; clock      ; 0.468  ; 0.468  ; Rise       ; clock           ;
+;  KEY[1]   ; clock      ; -1.831 ; -1.831 ; Rise       ; clock           ;
+; clear     ; clock      ; 0.160  ; 0.160  ; Rise       ; clock           ;
+; eaten     ; clock      ; -1.456 ; -1.456 ; Rise       ; clock           ;
+; hit       ; clock      ; -1.532 ; -1.532 ; Rise       ; clock           ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++--------------------------------------------------------------------------+
+; Clock to Output Times                                                    ;
++------------+------------+--------+--------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++------------+------------+--------+--------+------------+-----------------+
+; dir[*]     ; KEY[0]     ; 10.432 ; 10.432 ; Rise       ; KEY[0]          ;
+;  dir[0]    ; KEY[0]     ; 10.432 ; 10.432 ; Rise       ; KEY[0]          ;
+;  dir[1]    ; KEY[0]     ; 9.712  ; 9.712  ; Rise       ; KEY[0]          ;
+; dir[*]     ; KEY[0]     ; 11.846 ; 11.846 ; Fall       ; KEY[0]          ;
+;  dir[0]    ; KEY[0]     ; 11.846 ; 11.846 ; Fall       ; KEY[0]          ;
+;  dir[1]    ; KEY[0]     ; 11.217 ; 11.217 ; Fall       ; KEY[0]          ;
+; COLISION_S ; clock      ; 7.081  ; 7.081  ; Rise       ; clock           ;
+; EAT_S      ; clock      ; 7.127  ; 7.127  ; Rise       ; clock           ;
+; FOOD_S     ; clock      ; 6.791  ; 6.791  ; Rise       ; clock           ;
+; RESET      ; clock      ; 6.805  ; 6.805  ; Rise       ; clock           ;
+; WALK_S     ; clock      ; 7.136  ; 7.136  ; Rise       ; clock           ;
+; dir[*]     ; clock      ; 10.354 ; 10.354 ; Rise       ; clock           ;
+;  dir[0]    ; clock      ; 10.354 ; 10.354 ; Rise       ; clock           ;
+;  dir[1]    ; clock      ; 9.725  ; 9.725  ; Rise       ; clock           ;
++------------+------------+--------+--------+------------+-----------------+
+
+
++------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                          ;
++------------+------------+-------+-------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++------------+------------+-------+-------+------------+-----------------+
+; dir[*]     ; KEY[0]     ; 2.670 ; 2.670 ; Rise       ; KEY[0]          ;
+;  dir[0]    ; KEY[0]     ; 2.805 ; 2.805 ; Rise       ; KEY[0]          ;
+;  dir[1]    ; KEY[0]     ; 2.670 ; 2.670 ; Rise       ; KEY[0]          ;
+; dir[*]     ; KEY[0]     ; 2.670 ; 2.670 ; Fall       ; KEY[0]          ;
+;  dir[0]    ; KEY[0]     ; 2.805 ; 2.805 ; Fall       ; KEY[0]          ;
+;  dir[1]    ; KEY[0]     ; 2.670 ; 2.670 ; Fall       ; KEY[0]          ;
+; COLISION_S ; clock      ; 3.773 ; 3.773 ; Rise       ; clock           ;
+; EAT_S      ; clock      ; 3.804 ; 3.804 ; Rise       ; clock           ;
+; FOOD_S     ; clock      ; 3.674 ; 3.674 ; Rise       ; clock           ;
+; RESET      ; clock      ; 3.691 ; 3.691 ; Rise       ; clock           ;
+; WALK_S     ; clock      ; 3.811 ; 3.811 ; Rise       ; clock           ;
+; dir[*]     ; clock      ; 4.026 ; 4.026 ; Rise       ; clock           ;
+;  dir[0]    ; clock      ; 4.163 ; 4.163 ; Rise       ; clock           ;
+;  dir[1]    ; clock      ; 4.026 ; 4.026 ; Rise       ; clock           ;
++------------+------------+-------+-------+------------+-----------------+
+
+
++--------------------------------------------------------------+
+; Progagation Delay                                            ;
++------------+-------------+--------+--------+--------+--------+
+; Input Port ; Output Port ; RR     ; RF     ; FR     ; FF     ;
++------------+-------------+--------+--------+--------+--------+
+; KEY[1]     ; dir[0]      ; 12.700 ; 12.700 ; 12.700 ; 12.700 ;
+; KEY[1]     ; dir[1]      ; 12.068 ; 12.068 ; 12.068 ; 12.068 ;
+; clear      ; dir[0]      ; 8.898  ; 8.898  ; 8.898  ; 8.898  ;
+; clear      ; dir[1]      ; 8.266  ; 8.266  ; 8.266  ; 8.266  ;
++------------+-------------+--------+--------+--------+--------+
+
+
++----------------------------------------------------------+
+; Minimum Progagation Delay                                ;
++------------+-------------+-------+-------+-------+-------+
+; Input Port ; Output Port ; RR    ; RF    ; FR    ; FF    ;
++------------+-------------+-------+-------+-------+-------+
+; KEY[1]     ; dir[0]      ; 5.304 ; 5.304 ; 5.304 ; 5.304 ;
+; KEY[1]     ; dir[1]      ; 5.169 ; 5.169 ; 5.169 ; 5.169 ;
+; clear      ; dir[0]      ; 3.016 ; 3.111 ; 3.111 ; 3.016 ;
+; clear      ; dir[1]      ; 2.879 ; 2.976 ; 2.976 ; 2.879 ;
++------------+-------------+-------+-------+-------+-------+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clock      ; clock    ; 18       ; 0        ; 0        ; 0        ;
+; KEY[0]     ; clock    ; 13       ; 15       ; 0        ; 0        ;
+; clock      ; KEY[0]   ; 0        ; 0        ; 4        ; 0        ;
+; KEY[0]     ; KEY[0]   ; 0        ; 0        ; 8        ; 12       ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clock      ; clock    ; 18       ; 0        ; 0        ; 0        ;
+; KEY[0]     ; clock    ; 13       ; 15       ; 0        ; 0        ;
+; clock      ; KEY[0]   ; 0        ; 0        ; 4        ; 0        ;
+; KEY[0]     ; KEY[0]   ; 0        ; 0        ; 8        ; 12       ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Recovery Transfers                                                ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; KEY[0]     ; clock    ; 2        ; 2        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Removal Transfers                                                 ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; KEY[0]     ; clock    ; 2        ; 2        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 5     ; 5    ;
+; Unconstrained Input Port Paths  ; 44    ; 44   ;
+; Unconstrained Output Ports      ; 7     ; 7    ;
+; Unconstrained Output Port Paths ; 19    ; 19   ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Mon Jun 27 16:55:02 2016
+Info: Command: quartus_sta demo_fsm -c demo_fsm
+Info: qsta_default_script.tcl version: #1
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Warning (335093): TimeQuest Timing Analyzer is analyzing 2 combinational loops as latches.
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'demo_fsm.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name clock clock
+    Info (332105): create_clock -period 1.000 -name KEY[0] KEY[0]
+Warning (332125): Found combinational loop of 8 nodes
+    Warning (332126): Node "fsm1|dir[0]~18|combout"
+    Warning (332126): Node "fsm1|dir[0]~7|datab"
+    Warning (332126): Node "fsm1|dir[0]~7|combout"
+    Warning (332126): Node "fsm1|dir[1]~17|dataa"
+    Warning (332126): Node "fsm1|dir[1]~17|combout"
+    Warning (332126): Node "fsm1|dir[1]~2|datab"
+    Warning (332126): Node "fsm1|dir[1]~2|combout"
+    Warning (332126): Node "fsm1|dir[0]~18|dataa"
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -5.032
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -5.032        -9.902 KEY[0] 
+    Info (332119):    -2.019        -5.256 clock 
+Info (332146): Worst-case hold slack is -1.110
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.110        -1.853 KEY[0] 
+    Info (332119):     0.153         0.000 clock 
+Info (332146): Worst-case recovery slack is -0.068
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -0.068        -0.136 clock 
+Info (332146): Worst-case removal slack is 0.320
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.320         0.000 clock 
+Info (332146): Worst-case minimum pulse width slack is -1.631
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.631       -19.961 clock 
+    Info (332119):    -1.469        -1.469 KEY[0] 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info: Analyzing Fast Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -1.101
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.101        -2.144 KEY[0] 
+    Info (332119):    -0.474        -0.943 clock 
+Info (332146): Worst-case hold slack is -1.031
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.031        -1.880 KEY[0] 
+    Info (332119):    -0.468        -5.236 clock 
+Info (332146): Worst-case recovery slack is 0.724
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.724         0.000 clock 
+Info (332146): Worst-case removal slack is -0.344
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -0.344        -0.688 clock 
+Info (332146): Worst-case minimum pulse width slack is -1.380
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.380       -16.380 clock 
+    Info (332119):    -1.222        -1.222 KEY[0] 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 14 warnings
+    Info: Peak virtual memory: 492 megabytes
+    Info: Processing ended: Mon Jun 27 16:55:03 2016
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+
