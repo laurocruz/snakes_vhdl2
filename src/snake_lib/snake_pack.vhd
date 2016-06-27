@@ -90,5 +90,23 @@ PACKAGE snake_pack IS
 	         dir   : BUFFER STD_LOGIC_VECTOR(0 TO 1);
 	         FOOD_S, WALK_S, COLISION_S, EAT_S, GROW_S, RESET : OUT STD_LOGIC);
 	END COMPONENT;
+	
+	COMPONENT game IS
+    -- Dimensões do mapa
+    GENERIC (N : INTEGER := 10;
+             M : INTEGER := 10;
+				 INITIAL_SIZE : INTEGER := 2;
+				 width : INTEGER := 6);
+
+    PORT (CLOCK : IN STD_LOGIC;
+          CLEAR : IN STD_LOGIC;
+          KEY   : IN STD_LOGIC_VECTOR(1 DOWNTO 0);
+
+			 -- **************************
+          snake_size : OUT INTEGER RANGE 0 TO 50;
+          gmap       : OUT STD_LOGIC_VECTOR(0 TO N*M-1);
+          --snake_body : OUT int_array;
+          food_pos   : OUT INTEGER RANGE 0 TO N*M-1);
+    END COMPONENT;
 
 END snake_pack;
